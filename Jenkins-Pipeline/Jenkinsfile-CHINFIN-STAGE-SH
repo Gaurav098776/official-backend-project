@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+    stages {
+        stage('Deploy  stagging.sh') {
+            when {
+                branch 'M-STAGGING'
+            }
+            steps {
+                 sh 'bash /home/ubuntu/scripts/stagging.sh '
+                 echo 'Deploy success'
+            }
+        }
+    }
+    post {
+        success {
+            withCredentials([string(credentialsId: 'SLACK_TOKEN', variable: 'SLACK_TOKEN'), string(credentialsId: 'slackChannel', variable: 'SLACK_CHANNEL')]) {
+                sh '''
+                    curl --location 'https://slack.com/api/chat.postMessage' \
+                         --header 'Authorization: Bearer '$SLACK_TOKEN'' \
+                         --header 'Content-Type: application/json; charset=utf-8' \
+                         --data '{
+                                "text": " M-STAGGING (BACKEND-CHINFIN) Update -> New M-STAGGING (BACKEND-CHINFIN) changes are deployed :rocket:",
+                                "channel": "'$SLACK_CHANNEL'"}'
+                '''
+            }
+        }
+        failure {
+            withCredentials([string(credentialsId: 'SLACK_TOKEN', variable: 'SLACK_TOKEN'), string(credentialsId: 'slackChannel', variable: 'SLACK_CHANNEL')]) {
+                sh '''
+                    curl --location 'https://slack.com/api/chat.postMessage' \
+                         --header 'Authorization: Bearer '$SLACK_TOKEN'' \
+                         --header 'Content-Type: application/json; charset=utf-8' \
+                         --data '{
+                                "text": "Build Failed :x: of M-STAGGING (BACKEND-CHINFIN) -> Please check the Jenkins pipeline for details.",
+                                "channel": "'$SLACK_CHANNEL'"}'
+                '''
+            }
+        }
+    }
+}

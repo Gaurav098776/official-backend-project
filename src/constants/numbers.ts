@@ -1,0 +1,5 @@
+export const NUMBERS = {
+  FIVE_DAYS_IN_SECONDS: 5 * 24 * 60 * 60,
+  SEVEN_DAYS_IN_SECONDS: 7 * 24 * 60 * 60,
+  ONE_DAY_IN_SECONDS: 24 * 60 * 60,
+};

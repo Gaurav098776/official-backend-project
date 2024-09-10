@@ -1,0 +1,882 @@
+<html>
+  <head>
+    <style type="text/css">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Work Sans, sans-serif;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px 10px;
+        border-collapse: collapse;
+        font-size: 12px;
+      }
+
+      .border-table th,
+      .border-table td {
+        border: 1px solid #e6e6e6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="width: 768px; margin: auto">
+      <table>
+        <tr>
+          <td
+            style="
+              background-color: #ffffff;
+              text-align: center;
+              padding: 10px 0 15px;
+            "
+          >
+            <img
+              width="125px"
+              src={{nbfcLogo}}
+              class="CToWUd"
+              data-bit="iit"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: center; padding: 15px 0">
+            <h3 style="margin: 0; font-size: 16px">
+              Business summary : {{reportDate}}
+            </h3>
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="
+              text-align: center;
+              color: #109b68;
+              font-weight: 600;
+              font-size: 14px;
+            "
+          >
+            Total register users as on {{reportDate}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="border-table">
+              <tr>
+                <th
+                  style="
+                    background-color: #109b68;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  Platform
+                </th>
+                <th
+                  style="
+                    background-color: #11b177;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  {{reportDate}}
+                </th>
+                <th
+                  style="
+                    background-color: #109b68;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  Current month({{comparisonData.compCurrMonthDate}})
+                </th>
+                <th
+                  style="
+                    background-color: #109b68;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  Last month({{comparisonData.compLastMonthDate}})
+                </th>
+              </tr>
+              {{#each userData}}
+              <tr>
+                <th>{{this.appType}}</th>
+                <th>{{this.todaysUser}}</th>
+                <th>{{this.currentMonthUser}}</th>
+                <th>{{this.lastMonthUser}}</th>
+              </tr>
+              {{/each}}
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="
+              text-align: center;
+              color: #109b68;
+              font-weight: 600;
+              font-size: 14px;
+            "
+          >
+            Total Loans as on {{reportDate}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="border-table">
+              <tr>
+                <th
+                  style="
+                    background-color: #109b68;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  New
+                </th>
+                <th
+                  style="
+                    background-color: #11b177;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  Repeat
+                </th>
+                <th
+                  style="
+                    background-color: #109b68;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  Total
+                </th>
+              </tr>
+              <tr>
+                <th>{{disbursedData.newUser}}</th>
+                <th>{{disbursedData.repeatUser}}</th>
+                <th>{{disbursedData.totalDisbursedCount}}</th>
+              </tr>
+              <tr>
+                <th>₹ {{numberWithComma disbursedData.newUserAmount}}</th>
+                <th>₹ {{numberWithComma disbursedData.repeatUserAmount}}</th>
+                <th>
+                  ₹ {{numberWithComma disbursedData.totalDisbursedAmount}}
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="
+              color: #109b68;
+              font-weight: 600;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            Lending Summary of {{reportDate}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="border-table">
+              <tr>
+                {{#each disburseFilds as |disburseFilds|}}
+                <td
+                  style="background-color: {{#cIf @index '%' 2}} #11b177 {{else}} #109b68 {{/cIf}};
+                  color: #fff; {{#cIf @first}}border-top-left-radius: 10px;{{/cIf}}
+                  {{#cIf @last}}border-top-right-radius: 10px;{{/cIf}}"
+                >
+                  {{disburseFilds}}
+                </td>
+                {{/each}}
+              </tr>
+              {{#each disbursedData.disbArr as |disbArr|}}
+              <tr>
+                <td>{{disbArr.key}}</td>
+                <td>{{disbArr.newUser}}</td>
+                <td>₹ {{numberWithComma disbArr.newUserAmount}}</td>
+                <td>{{disbArr.repeatUser}}</td>
+                <td>₹ {{numberWithComma disbArr.repeatUserAmount}}</td>
+                <td>{{disbArr.count}}</td>
+                <td>₹ {{numberWithComma disbArr.amount}}</td>
+              </tr>
+              {{/each}}
+              <tfoot>
+                <tr style="background-color: #eaf3f0">
+                  <td style="font-weight: bold">Total</td>
+                  <td style="font-weight: bold">{{disbursedData.newUser}}</td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma disbursedData.newUserAmount}}
+                  </td>
+                  <td style="font-weight: bold">
+                    {{disbursedData.repeatUser}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma disbursedData.repeatUserAmount}}
+                  </td>
+                  <td style="font-weight: bold">
+                    {{disbursedData.totalDisbursedCount}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma disbursedData.totalDisbursedAmount}}
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </td>
+        </tr>
+        <!-- Repayment Summary -->
+        <tr>
+          <td
+            style="
+              color: #109b68;
+              font-weight: 600;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            Repayment Summary of {{reportDate}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="border-table">
+              <tr>
+                {{#each repaidFilds as |repaidFilds|}}
+                <td
+                  style="background-color: {{#cIf @index '%' 2}} #11b177 {{else}} #109b68 {{/cIf}};
+                  color: #fff; {{#cIf @first}}border-top-left-radius: 10px;{{/cIf}}
+                  {{#cIf @last}}border-top-right-radius: 10px;{{/cIf}}"
+                >
+                  {{repaidFilds}}
+                </td>
+                {{/each}}
+              </tr>
+              {{#each repayData.repayArr as |repayArr|}}
+              <tr>
+                <td>{{repayArr.key}}</td>
+                <td>₹ {{numberWithComma repayArr.principal}}</td>
+                <td>₹ {{numberWithComma repayArr.interest}}</td>
+                <td>₹ {{numberWithComma repayArr.penalty}}</td>
+                <td>₹ {{numberWithComma repayArr.newUserAmount}}</td>
+                <td>₹ {{numberWithComma repayArr.repeatUserAmount}}</td>
+                <td>₹ {{numberWithComma repayArr.amount}}</td>
+              </tr>
+              {{/each}}
+              <tfoot>
+                <tr style="background-color: #eaf3f0">
+                  <td style="font-weight: bold">Total</td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma repayData.totalPrincipalRecovered}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma repayData.totalInterestRecovered}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma repayData.totalPenaltyRecovered}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma repayData.totalNewPayAmount}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma repayData.totalRepeatPayAmount}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma repayData.totalPaidAmount}}
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </td>
+        </tr>
+        <!-- Repayment Summary End -->
+        <!-- Repaid Income Summary -->
+        <tr>
+          <td>
+            <table class="border-table">
+              <tr>
+                <td
+                  style="
+                    background-color: #109b68;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  Month
+                </td>
+                <td style="background-color: #11b177; color: #fff">
+                  Loan type
+                </td>
+                <td style="background-color: #109b68; color: #fff">
+                  Repaid income count
+                </td>
+                <td style="background-color: #11b177; color: #fff">
+                  Repaid income amount
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="3" style="text-align: center">
+                  <b>Current Month</b><br />{{comparisonData.compCurrMonthDate}}
+                </td>
+                <td style="color: #7f7f7f">New</td>
+                <td>
+                  {{comparisonData.currMonthLoanData.newIncomeCount}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.newIncomeC}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.newIncomeAmt}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.newIncome}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td style="color: #7f7f7f">Repeat</td>
+                <td>
+                  {{comparisonData.currMonthLoanData.repeatIncomeCount}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.repeatIncomeC}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.repeatIncomeAmt}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.repeatIncome}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+              </tr>
+              <tr style="background-color: #eaf3f0">
+                <td style="font-weight: bold">Total</td>
+                <td style="font-weight: 700">
+                  {{comparisonData.currMonthLoanData.totalIncomeCount}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.totalIncomeC}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td style="font-weight: 700">
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.totalIncomeAmt}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.totalIncome}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+              </tr>
+
+              <!-- Last Month -->
+              <tr>
+                <td rowspan="3" style="text-align: center">
+                  <b>Last Month</b><br />{{comparisonData.compLastMonthDate}}
+                </td>
+                <td style="color: #7f7f7f">New</td>
+                <td>{{comparisonData.lastMonthLoanData.newIncomeCount}}</td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.newIncomeAmt}}
+                </td>
+              </tr>
+              <tr>
+                <td style="color: #7f7f7f">Repeat</td>
+                <td>{{comparisonData.lastMonthLoanData.repeatIncomeCount}}</td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.repeatIncomeAmt}}
+                </td>
+              </tr>
+              <tr style="background-color: #eaf3f0">
+                <td style="font-weight: bold">Total</td>
+                <td style="font-weight: 700">
+                  {{comparisonData.lastMonthLoanData.totalIncomeCount}}
+                </td>
+                <td style="font-weight: 700">
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.totalIncomeAmt}}
+                </td>
+              </tr>
+              <!-- Last Month End -->
+            </table>
+          </td>
+        </tr>
+        <!-- Repaid Income Summary End -->
+        <!-- Payment Mode -->
+        <tr>
+          <td>
+            <table class="border-table">
+              <tr>
+                <td style="background-color: #109b68; color: #fff">
+                  Payment Mode
+                </td>
+                <td style="background-color: #11b177; color: #fff">
+                  New User Count
+                </td>
+                <td style="background-color: #109b68; color: #fff">
+                  Repeat User Count
+                </td>
+                <td style="background-color: #11b177; color: #fff">
+                  New User Amount
+                </td>
+                <td style="background-color: #109b68; color: #fff">
+                  Repeat User Amount
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold">Auto debit</td>
+                <td>{{repayData.autoPayNewCount}}</td>
+                <td>{{repayData.autoPayRepeatCount}}</td>
+                <td>₹ {{numberWithComma repayData.autoPayNewAmount}}</td>
+                <td>₹ {{numberWithComma repayData.autoPayRepeatAmount}}</td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold">Manual</td>
+                <td>{{repayData.manualPayNewCount}}</td>
+                <td>{{repayData.manualPayRepeatCount}}</td>
+                <td>₹ {{numberWithComma repayData.manualPayNewAmount}}</td>
+                <td>₹ {{numberWithComma repayData.manualPayRepeatAmount}}</td>
+              </tr>
+              <tfoot>
+                <tr style="background-color: #eaf3f0">
+                  <td style="font-weight: bold">Total</td>
+                  <td style="font-weight: bold">
+                    {{repayData.totalNewPayCount}}
+                  </td>
+                  <td style="font-weight: bold">
+                    {{repayData.totalRepeatPayCount}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma repayData.totalNewPayAmount}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma repayData.totalRepeatPayAmount}}
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </td>
+        </tr>
+        <!-- Payment Mode End -->
+        <!-- Month Wise -->
+        <tr>
+          <td
+            style="
+              color: #109b68;
+              font-weight: 600;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            Monthly Comparison
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="border-table">
+              <tr>
+                <td
+                  style="
+                    background-color: #109b68;
+                    color: #fff;
+                    text-align: center;
+                  "
+                >
+                  Month
+                </td>
+                <td style="background-color: #11b177; color: #fff">
+                  Disbursed loan
+                </td>
+                <td style="background-color: #109b68; color: #fff">
+                  Disbursed amount
+                </td>
+                <td style="background-color: #11b177; color: #fff">
+                  Repay amount
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="3" style="text-align: center">
+                  <b>Current Month</b><br />{{comparisonData.compCurrMonthDate}}
+                </td>
+                <td>
+                  <div style="float: left; color: #7f7f7f">New</div>
+                  <div style="float: right">
+                    {{comparisonData.currMonthLoanData.newUser}}
+                    <img
+                      src="{{comparisonData.currMonthLoanData.loanNew}}"
+                      class="CToWUd"
+                      data-bit="iit"
+                    />
+                  </div>
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.newUserAmount}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.loanNewAmt}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.newUserRepay}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.repayNew}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="float: left; color: #7f7f7f">Repeat</div>
+                  <div style="float: right">
+                    {{comparisonData.currMonthLoanData.repeatUser}}
+                    <img
+                      src="{{comparisonData.currMonthLoanData.loanRepeat}}"
+                      class="CToWUd"
+                      data-bit="iit"
+                    />
+                  </div>
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.repeatUserAmount}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.loanRepeatAmt}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.repeatUserRepay}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.repayRepeat}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+              </tr>
+              <tr style="background-color: #eaf3f0">
+                <td>
+                  <div style="float: left; font-weight: bold">Total</div>
+                  <div style="float: right; font-weight: 700">
+                    {{comparisonData.currMonthLoanData.totalDisbursedCount}}
+                    <img
+                      src="{{comparisonData.currMonthLoanData.loanTotal}}"
+                      class="CToWUd"
+                      data-bit="iit"
+                    />
+                  </div>
+                </td>
+                <td style="font-weight: 700">
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.totalDisbursedAmount}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.loanTotalAmt}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td style="font-weight: 700">
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.totalRepayAmount}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.repayTotal}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+              </tr>
+
+              <!-- Last Month -->
+              <tr>
+                <td rowspan="3" style="text-align: center">
+                  <b>Last Month</b><br />{{comparisonData.compLastMonthDate}}
+                </td>
+                <td>
+                  <div style="float: left; color: #7f7f7f">New</div>
+                  <div style="float: right">
+                    {{comparisonData.lastMonthLoanData.newUser}}
+                  </div>
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.newUserAmount}}
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.newUserRepay}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="float: left; color: #7f7f7f">Repeat</div>
+                  <div style="float: right">
+                    {{comparisonData.lastMonthLoanData.repeatUser}}
+                  </div>
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.repeatUserAmount}}
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.repeatUserRepay}}
+                </td>
+              </tr>
+              <tr style="background-color: #eaf3f0">
+                <td>
+                  <div style="float: left; font-weight: bold">Total</div>
+                  <div style="float: right; font-weight: 700">
+                    {{comparisonData.lastMonthLoanData.totalDisbursedCount}}
+                  </div>
+                </td>
+                <td style="font-weight: 700">
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.totalDisbursedAmount}}
+                </td>
+                <td style="font-weight: 700">
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.totalRepayAmount}}
+                </td>
+              </tr>
+              <!-- Last Month End -->
+            </table>
+          </td>
+        </tr>
+        <!-- Month Wise End -->
+
+        <!-- Income Summary of {{reportDate}} -->
+        <tr>
+          <td
+            style="
+              color: #109b68;
+              font-weight: 600;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            Disbursement Income Summary of {{reportDate}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="border-table">
+              <tr>
+                <td style="background-color: #109b68; color: #fff">
+                  Description
+                </td>
+                <td style="background-color: #11b177; color: #fff">
+                  {{reportDate}}
+                </td>
+                <td style="background-color: #109b68; color: #fff">
+                  {{comparisonData.compCurrMonthDate}} <b>(Current Month)</b>
+                </td>
+                <td style="background-color: #11b177; color: #fff">
+                  {{comparisonData.compLastMonthDate}} <b>(Last Month)</b>
+                </td>
+              </tr>
+              <tr>
+                <td>Processing Fees @6.5%</td>
+                <td>₹ {{numberWithComma disbursedData.totalProcessFees}}</td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.totalProcessFees}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.processFees}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.totalProcessFees}}
+                </td>
+              </tr>
+              <tr>
+                <td>Documentation Charges @1%</td>
+                <td>
+                  ₹ {{numberWithComma disbursedData.totalDocumentCharges}}
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.totalDocumentCharges}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.documentCharges}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.totalDocumentCharges}}
+                </td>
+              </tr>
+              <tr>
+                <td>Online Convenience Fees @₹{{onlineConvenienceFees}}</td>
+                <td>
+                  ₹ {{numberWithComma disbursedData.totalConvenienceCharges}}
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.currMonthLoanData.totalConvenienceCharges}}
+                  <img
+                    src="{{comparisonData.currMonthLoanData.convenienceCharges}}"
+                    class="CToWUd"
+                    data-bit="iit"
+                  />
+                </td>
+                <td>
+                  ₹ {{numberWithComma
+                  comparisonData.lastMonthLoanData.totalConvenienceCharges}}
+                </td>
+              </tr>
+              <tfoot>
+                <tr style="background-color: #eaf3f0">
+                  <td style="font-weight: bold">Total</td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma disbursedData.totalCharges}}
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma
+                    comparisonData.currMonthLoanData.totalCharges}}
+                    <img
+                      src="{{comparisonData.currMonthLoanData.totalFees}}"
+                      class="CToWUd"
+                      data-bit="iit"
+                    />
+                  </td>
+                  <td style="font-weight: bold">
+                    ₹ {{numberWithComma
+                    comparisonData.lastMonthLoanData.totalCharges}}
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </td>
+        </tr>
+        <!-- Income Summary of {{reportDate}} -->
+
+        <!-- LCR Report -->
+        <tr>
+          <td
+            style="
+              color: #2f1518;
+              font-weight: 600;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            LCR Summary of {{lcrData.lcrDate}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="border-table text-nowrap">
+              <tbody>
+                <tr>
+                  {{#each lcrFields as |lcrfields|}}
+                  <td
+                    style="background-color: {{#cIf @index '%' 2}} #11b177 {{else}} #109b68 {{/cIf}};
+                  color: #fff; {{#cIf @first}}border-top-left-radius: 10px;{{/cIf}}
+                  {{#cIf @last}}border-top-right-radius: 10px;{{/cIf}}"
+                  >
+                    {{lcrfields}}
+                  </td>
+                  {{/each}}
+                </tr>
+                {{#each lcrData.rows as |rows|}}
+                <tr>
+                  <td>{{rows.[Date]}}</td>
+                  <td>₹ {{numberWithComma rows.[Bank Balance]}}</td>
+                  <td>₹ {{numberWithComma rows.[Marketable Securities]}}</td>
+                  <td>₹ {{numberWithComma rows.[Total HQLA]}}</td>
+                  <td>₹ {{numberWithComma rows.[Expected Cash Inflow]}}</td>
+                  <td>₹ {{numberWithComma rows.[Stressed Cash Inflow]}}</td>
+                  <td>₹ {{numberWithComma rows.[Expected Cash Outflow]}}</td>
+                  <td>₹ {{numberWithComma rows.[Stressed Cash Outflow]}}</td>
+                  <td>₹ {{numberWithComma rows.[Total Net Cash Outflows]}}</td>
+                  <td>{{rows.[LCR Percentage]}}</td>
+                  <td>{{rows.[Updated By]}}</td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <!-- LCR Report -->
+
+        <!-- copryright -->
+
+        <!-- Footer -->
+        <tr>
+          <td>
+            <tr style="text-align: center">
+              <td
+                style="
+                  background-color: #171732;
+                  color: #ffffff;
+                  padding: 10px 0 0 0;
+                "
+              >
+                Partnered NBFC :
+                <span style="font-weight: bold"> {{nbfcName}} </span>
+                / NBFC registration number :
+                <span style="font-weight: bold">
+                  {{nbfcRegisterationNumber}}
+                </span>
+              </td>
+            </tr>
+            <tr style="text-align: center">
+              <td
+                style="
+                  background-color: #171732;
+                  color: #ffffff;
+                  padding: 5px 0 10px 0;
+                "
+              >
+                {{nbfcAddress}}
+              </td>
+            </tr>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

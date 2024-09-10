@@ -1,0 +1,410 @@
+<html>
+  <header>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap'
+      rel='stylesheet'
+    />
+  </header>
+  <body style='padding: 0; margin: 0'>
+    <table
+      style="
+        background-color: #fff;
+        margin: auto;
+        width: 100%;
+        padding: 20px 30px;
+        font-family: 'Source Sans Pro', sans-serif;
+      "
+    >
+      <tbody>
+        <!-- container 1 -->
+        <tr>
+          <td style='text-align: start; font-size: 18px'>
+            <div style='font-weight: 600'>आधार ऑफ़लाइन ई-केवाईसी</div>
+          </td>
+          <td style='text-align: right; padding: 10px 0'>
+            <div style='font-weight: 600; font-size: 18px'>
+              ऑफ़लाइन ई-केवाईसी - सत्यापित
+            </div>
+          </td>
+        </tr>
+        <!-- container 2 -->
+        <tr>
+          <td style='text-align: center' colspan='2'>
+            <hr style='margin-bottom: 1px; height: 1px; background: black' />
+            <hr style='padding: 0; margin: 0; height: 1px; background: black' />
+            <div
+              style='
+                font-weight: 600;
+                font-size: 16px;
+                letter-spacing: 0.3px;
+                margin: 10px;
+              '
+            >
+              सबूत की पहचान
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style='padding: 30px 0'>
+            <div
+              style='
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                font-size: 14px;
+                padding: 4px 0;
+              '
+            >
+              <div style='float: left; width: 120px; font-weight: normal'>
+                आधार नंबर
+              </div>
+              <span
+                style='letter-spacing: 0.3px; font-size: 14px'
+              >{{aadhaarNumber}}</span>
+            </div>
+            <div
+              style='
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                font-size: 14px;
+                padding: 4px 0;
+              '
+            >
+              <div style='float: left; width: 120px; font-weight: normal'>
+                नाम
+              </div>
+              <span
+                style='letter-spacing: 0.3px; font-size: 14px'
+              >{{borrowerName}}</span>
+            </div>
+            <div
+              style='
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                font-size: 14px;
+                padding: 4px 0;
+              '
+            >
+              <div style='float: left; width: 120px; font-weight: normal'>
+                जन्म की तारीख
+              </div>
+              <span
+                style='letter-spacing: 0.3px; font-size: 14px'
+              >{{dateOfBirth}}</span>
+            </div>
+            <div
+              style='
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                font-size: 14px;
+                padding: 4px 0;
+              '
+            >
+              <div style='float: left; width: 120px; font-weight: normal'>
+                लिंग
+              </div>
+              <span
+                style='letter-spacing: 0.3px; font-size: 14px'
+              >{{gender}}</span>
+            </div>
+            {{!
+            <div
+              style="
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                font-size: 14px;
+                padding: 4px 0;
+              "
+            >
+              <div style="float: left; width: 120px; font-weight: normal">
+                फ़ोन नंबर
+              </div>
+              <span style="letter-spacing: 0.3px; font-size: 14px">-</span>
+            </div>
+            }}
+          </td>
+          <td style='text-align: right; padding: 30px 0'>
+            <img width='130px' style='{{aadhaarCSS}}' src='{{aadhharImage}}' />
+          </td>
+        </tr>
+        ​
+        <!-- container 3 -->
+        <tr>
+          <td colspan='2' style='text-align: center; padding: 10px 0'>
+            <hr style='padding: 0; margin: 0; height: 1px; background: black' />
+            <div
+              style='
+                font-weight: 600;
+                font-size: 16px;
+                letter-spacing: 0.3px;
+                margin: 10px;
+                line-height: 20px;
+              '
+            >
+              पते का प्रमाण
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              font-weight: 600;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              की देखभाल
+            </div>
+            <span>{{careOf}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              मकान नंबर .
+            </div>
+            <span>{{houseNo}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              गली
+            </div>
+            <span>{{street}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              सीमाचिह्न
+            </div>
+            <span>{{landmark}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              इलाका
+            </div>
+            <span>{{locality}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              वीटीसी
+            </div>
+            <span>{{vtc}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              उप जिला
+            </div>
+            <span>{{subDistrict}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              ज़िला
+            </div>
+            <span>{{district}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              राज्य
+            </div>
+            <span>{{state}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding: 4px 0;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              पिन कोड
+            </div>
+            <span>{{pincode}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              font-size: 14px;
+              letter-spacing: 0.3px;
+              padding-bottom: 20px;
+            '
+          >
+            <div style='width: 120px; float: left; font-weight: normal'>
+              पोस्ट ऑफ़िस
+            </div>
+            <span>{{PostOffice}}</span>
+          </td>
+        </tr>
+        <!-- container 4 -->
+        {{!
+        <tr>
+          <td colspan="2">
+            <hr style="padding: 0; margin: 0; height: 1px; background: black" />
+            <div style="padding: 10px 0">
+              <div
+                style="font-size: 14px; letter-spacing: 0.3px; padding: 4px 0"
+              >
+                आधार रिस्पांस कोड
+              </div>
+              <div
+                style="
+                  font-size: 14px;
+                  letter-spacing: 0.3px;
+                  font-weight: 600;
+                  padding: 4px 0;
+                "
+              >
+                -
+              </div>
+            </div>
+          </td>
+        </tr>
+        }}
+        <tr>
+          <td colspan='2'>
+            <hr style='padding: 0; margin: 0; height: 1px; background: black' />
+            <div style='padding: 10px 0'>
+              <div
+                style='font-size: 14px; letter-spacing: 0.3px; padding: 4px 0'
+              >
+                ऑफलाइन ई-केवाईसी का टाइमस्टैम्प
+              </div>
+              <div
+                style='
+                  font-size: 14px;
+                  letter-spacing: 0.3px;
+                  font-weight: 600;
+                  padding: 4px 0;
+                '
+              >
+                {{timeStampOfflineEKyc}}
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2'>
+            <hr style='padding: 0; margin: 0; height: 1px; background: black' />
+            <div style='padding: 10px 0'>
+              <div
+                style='font-size: 14px; letter-spacing: 0.3px; padding: 4px 0'
+              >
+                ऑफलाइन ई-केवाईसी का तरीका
+              </div>
+              <div
+                style='
+                  font-size: 14px;
+                  letter-spacing: 0.3px;
+                  font-weight: 600;
+                  padding: 4px 0;
+                '
+              >
+                ओटीपीकेवाईसी
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      style='
+        font-size: 10px;
+        bottom: 5px;
+        position: fixed;
+        right: 0;
+        padding: 10px 30px 5px 0px;
+        text-align: right;
+      '
+    >
+      <b>पृष्ठ 1</b>
+    </div>
+  </body>
+</html>

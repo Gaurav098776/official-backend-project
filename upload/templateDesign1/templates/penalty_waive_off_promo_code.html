@@ -1,0 +1,331 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- background-color: #fafaff; -->
+  <header>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </header>
+  <!-- #f6fbff -->
+  <head>
+    <style>
+      .payment-detail-table td {
+        padding: 0;
+      }
+      .emi-table td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body style="padding: 0; margin: 0; font-family: 'Lexend', sans-serif">
+    <div style="width: 100%; margin: auto; background-color: #ffffff">
+      <table style="width: 100%" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td>
+              <div style="margin: auto; max-width: 100%">
+                <table
+                  style="margin: auto; max-width: 100%; width: 100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                >
+                  <tbody>
+                    <tr>
+                      <td><br /></td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0 10px">
+                        <p>
+                          <span style="font-weight: bold">Dear, ##NAME##</span>
+                        </p>
+                        <p style="text-align: justify">
+                          We regret to inform you that your loan payment is now
+                          significantly overdue since
+                          <span style="font-weight: 700"
+                            >##PENALTY_DAYS## days</span
+                          >, and despite our previous reminders regarding your
+                          <span style="font-weight: 700"
+                            >Overdue EMIs & Legal Proceedings</span
+                          >, we have not received any payment from you. However,
+                          we understand that sometimes situations can be
+                          challenging, and people may face financial
+                          difficulties. Therefore, we would like to offer you a
+                          <span style="font-weight: 700"
+                            >Last & Final Opportunity</span
+                          >
+                          to resolve this matter without proceeding any further
+                          <span style="font-weight: 700">Legal Action</span>.
+                        </p>
+                        <p
+                          style="
+                            text-align: justify;
+                            font-weight: 700;
+                            color: red;
+                          "
+                        >
+                          For the 1st & Last time, we are prepared to waive ##DISCOUNT_PR##%
+                          of the penalties if you agree to settle your
+                          outstanding loan till ##VALID_TILL_DATE##.
+                        </p>
+                        <p style="text-align: justify; font-weight: 700">
+                          Note: This is a one time final offer & only valid till
+                          ##VALID_TILL_DATE##.
+                        </p>
+                        <p style="text-align: justify; font-weight: 700">
+                          This offer is only applicable if you will close your
+                          loan in 1 shot. No Installments will be applicable.
+                        </p>
+                        <p style="text-align: justify">
+                          Please contact our collection support team at
+                          <span style="font-weight: 700"
+                            ><a
+                              href="##WHATSAPP_LINK##"
+                              style="text-decoration: none"
+                              >##COLLECTION_PHONE##</a
+                            ></span
+                          >
+                          or
+                          <span style="font-weight: 700"
+                            ><a
+                              href="mailto:##COLLECTION_EMAIL##"
+                              style="text-decoration: none"
+                              >##COLLECTION_EMAIL##</a
+                            ></span
+                          >
+                          immediately to discuss the payment arrangements and
+                          settle the outstanding loan or else can settle your
+                          loan directly from the below promo code:
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 20px 0 0 0">
+              <div
+                style="
+                  background-color: rgba(69, 227, 228, 0.05);
+                  padding: 20px;
+                "
+              >
+                <table
+                  style="min-width: 100%; max-width: 100%; text-align: center"
+                >
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div>
+                          <div
+                            style="
+                              border: 1px dashed;
+                              border-right: none;
+                              display: inline-block;
+                              vertical-align: middle;
+                              font-weight: bold;
+                              font-size: 18px;
+                              padding: 10px;
+                              line-height: 1;
+                              letter-spacing: 2px;
+                              background-color: #ffffff;
+                            "
+                          >
+                            ##PROMO_CODE##
+                          </div>
+                          <div
+                            style="
+                              border: 1px solid #000000;
+                              display: inline-block;
+                              vertical-align: middle;
+                              font-size: 14px;
+                              padding: 10px;
+                              line-height: 19px;
+                              background-color: #000000;
+                              color: #ffffff;
+                              cursor: pointer;
+                            "
+                          >
+                            COPY
+                          </div>
+                        </div>
+                        <div style="margin: 15px 0 0 0; font-weight: bold">
+                          Valid till ##VALID_TILL_DATE##
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 20px 10px 0 10px">
+              <div
+                style="
+                  margin: auto;
+                  width: 80%;
+                  border: 1px solid rgba(187, 255, 248, 1);
+                "
+              >
+                ##EMI##
+                <div
+                  style="
+                    background-color: rgba(69, 227, 228, 0.05);
+                    margin-top: 10px;
+                    min-width: 100%;
+                  "
+                >
+                  <table
+                    style="min-width: 100%; font-weight: bold"
+                    class="emi-table"
+                  >
+                    <tbody>
+                      <tr>
+                        <td>Total amount</td>
+                        <td style="text-align: right">₹##TOTAL_AMOUNT##</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div
+                  style="
+                    background: linear-gradient(to top, #2ed4c2, #45e3e4);
+                    margin-top: 10px;
+                    min-width: 100%;
+                  "
+                >
+                  <table
+                    style="min-width: 100%; font-weight: bold; color: #ffffff"
+                    class="emi-table"
+                  >
+                    <tbody>
+                      <tr>
+                        <td>Applied Waiver Amount</td>
+                        <td style="text-align: right">
+                          ₹ -##DISCOUNT_AMOUNT##
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div
+                  style="
+                    background-color: rgba(46, 212, 194, 0.2);
+                    margin-top: 10px;
+                    min-width: 100%;
+                  "
+                >
+                  <table
+                    style="
+                      min-width: 100%;
+                      font-weight: bold;
+                      border: 2px solid #2ed4c2;
+                    "
+                    class="emi-table"
+                  >
+                    <tbody>
+                      <tr>
+                        <td>
+                          Total amount to repay
+                          <img
+                            height="20px"
+                            width="20px"
+                            src="https://storage.googleapis.com/backend_static_stuff/1696051445148.png"
+                            alt="percentage_icon"
+                            style="vertical-align: middle"
+                          />
+                        </td>
+                        <td style="text-align: right">₹##REPAY_AMOUNT##</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 20px">
+              <div
+                style="
+                  background-color: #071818;
+                  padding: 15px;
+                  font-size: 14px;
+                  border-radius: 8px;
+                  color: #ffffff;
+                  font-weight: bold;
+                  width: 120px;
+                  text-align: center;
+                  margin: auto;
+                  cursor: pointer;
+                "
+              >
+                <a href="##link##" style="color: white; text-decoration: none"
+                  >PAY NOW</a
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="margin: auto; width: 100%; text-align: justify">
+                <div>
+                  Once you are done with the payment, please share the
+                  screenshot with us so that we can initiate the process for
+                  <span style="font-weight: 700">NOC & Case Withdrawal</span>.
+                  If still you are not able to settle your loan then as per the
+                  terms and conditions of your loan agreement, we are left with
+                  no choice but to take strict action including
+                  <span style="font-weight: 700">LEGAL ACTIONS</span> at
+                  <span style="font-weight: 700">Ahmedabad Court</span>.We
+                  genuinely hope to avoid prolonged legal proceedings and reach
+                  a mutually beneficial resolution. Our goal is to assist you in
+                  resolving your financial obligations with minimum
+                  consequences.
+                </div>
+                <div style="margin-top: 25px">
+                  We sincerely request you to consider this final opportunity
+                  seriously and take the necessary steps to settle your loan
+                  without any further legal proceedings. Your cooperation in
+                  this regard will be greatly appreciated.
+                </div>
+                <div style="margin-top: 25px">
+                  Thank you for your attention to this matter. We look forward
+                  to your prompt response and a positive resolution.
+                </div>
+                <div style="margin: 25px 0; font-weight: 700">
+                  <p>Thanks & Regards,</p>
+                  <p>
+                    Support Team - Collection<br />
+                    ##NBFCSHORTNAME##
+                  </p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div
+                style="
+                  max-width: 100%;
+                  background-color: #071818;
+                  padding: 10px;
+                  text-align: center;
+                  color: #fff;
+                  margin-top: 20px;
+                "
+              >
+                ##NBFCINFO##
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

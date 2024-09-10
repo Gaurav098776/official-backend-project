@@ -1,0 +1,16 @@
+name: Production Deployment
+
+on:
+  push:
+    branches: ['C-PROD-YML']
+    tags: 'v*.*.*'
+
+jobs:
+  deploy:
+    runs-on: CHINFIN_LINUX_PROD
+
+    steps:
+      - name: Build & Deploy
+        run: |
+          cd /home/ubuntu/scripts
+          sh backend_deploy.sh

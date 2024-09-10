@@ -1,0 +1,77 @@
+name: Stagging Deployment
+
+on:
+  push:
+    branches: ['M-STAGGING']
+    tags: 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - name: ${{ github.ref_name }}
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        id: prep
+        run: |
+          TAG=$(echo $GITHUB_SHA | head -c7)
+          IMAGE=${{ secrets.STAGGING_DOCKERHUB_IMAGE}}
+          echo ::set-output name=tagged_image::${IMAGE}:${TAG}
+          echo ::set-output name=tag::${TAG}
+          echo ::set-output name=image::${IMAGE}
+
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Log into registry docker hub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Stagging Build and push Docker image tag ${{ steps.prep.outputs.tag }}
+        if: ${{ github.ref_name == 'M-STAGGING' }}
+        id: stagging-build-and-push
+        uses: docker/build-push-action@v4
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          GENERATE_SOURCEMAP: false
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.prep.outputs.tagged_image }},${{ steps.prep.outputs.image }}:latest
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new
+
+      - name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+
+  deploy:
+    runs-on: CHINFIN_LINUX_PROD
+    needs: build
+
+    steps:
+      - name: Pull docker image
+        run: |
+          docker pull ${{ secrets.STAGGING_DOCKERHUB_IMAGE}}:latest
+          sleep 2
+          docker service update --force ${{ secrets.STAGGING_DOCKER_SERVICE}} --image ${{ secrets.STAGGING_DOCKERHUB_IMAGE}}:latest --with-registry-auth

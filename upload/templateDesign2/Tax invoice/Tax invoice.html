@@ -1,0 +1,509 @@
+<html>
+  <header>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend&family=Lexend+Deca:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </header>
+  <style>
+    .body {
+      font-family: 'Lexend';
+    }
+
+    .second-table td,
+    th {
+      border: 1px solid #000000;
+      text-align: left;
+      padding: 8px;
+    }
+  </style>
+
+  <body style="padding: 0; margin: 0; padding: 0 40px; display: block">
+    <div style="position: relative">
+      <!-- <img style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, 100%);
+        " src="#"
+         /> -->
+    </div>
+    <table
+      style="
+        background-color: #fff;
+        margin: auto;
+        width: 100%;
+        /* max-width: 900px; */
+
+        font-family: Lexend;
+      "
+    >
+      <tbody>
+        <tr>
+          <td style="width: 70%; padding: 30px 0 20px 0">
+            <div style="font-weight: 600; font-size: 19px">##NBFC##</div>
+            <div
+              style="
+                font-weight: normal;
+
+                font-size: 14px;
+                color: #1c2525;
+                opacity: 0.5;
+                padding: 5px 0;
+              "
+            >
+              ##nbfcShortAddress##
+            </div>
+
+            <div
+              style="width: 200px; border: 1px solid #3b2a30; opacity: 0.3"
+            ></div>
+            <div style="display: flex; flex-direction: row; padding: 10px 0">
+              <div style="font-weight: bold; font-size: 14px">GSTIN:</div>
+              <div
+                style="
+                  font-color: #1c2525;
+                  opacity: 0.5;
+                  margin-left: 5px;
+                  font-size: 14px;
+                "
+              >
+                ##GSTIN##
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: row; margin-top: 5px">
+              <div style="display: flex; flex-direction: row">
+                <div style="font-weight: bold; font-size: 14px">Email:</div>
+                <div
+                  style="
+                    font-color: #1c2525;
+                    opacity: 0.5;
+                    margin-left: 5px;
+                    margin-right: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  ##legalMail##
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: row">
+                <div style="font-weight: bold; font-size: 14px">Tel:</div>
+                <div
+                  style="
+                    font-color: #1c2525;
+                    opacity: 0.5;
+                    margin-left: 5px;
+                    font-size: 14px;
+                  "
+                >
+                  ##legalNumber##
+                </div>
+              </div>
+            </div>
+          </td>
+          <td style="text-align: right; padding: 30px 0">
+            <img width="120px" src="##NBFCLOGO##" />
+          </td>
+        </tr>
+        <tr style="width: 100%">
+          <td colspan="2">
+            <svg
+              width="100%"
+              height="25px"
+              viewBox="0 0 2483 52"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M2482.01 50H1906L1828.58 0H2482.01V50Z" fill="#26BBBC" />
+              <path
+                d="M1487.06 51.7441H0V1.74414H1406.19L1487.06 51.7441Z"
+                fill="#172882"
+              />
+              <path
+                d="M1584.8 51.7441H1546.99L1465.54 1.74414H1503.35L1584.8 51.7441Z"
+                fill="#172882"
+              />
+              <path
+                d="M1672.66 51.7441H1635.42L1553.97 1.74414H1591.2L1672.66 51.7441Z"
+                fill="#172882"
+              />
+              <path
+                d="M1761.09 51.7441H1723.27L1641.82 1.74414H1679.63L1761.09 51.7441Z"
+                fill="#172882"
+              />
+              <path
+                d="M1848.94 51.7441H1811.12L1729.67 1.74414H1767.49L1848.94 51.7441Z"
+                fill="#172882"
+              />
+            </svg>
+          </td>
+        </tr>
+        <tr style="width: 100%">
+          <td style="width: 100%" colspan="2">
+            <div
+              width="100%"
+              style="
+                justify-content: center;
+                display: flex;
+                margin: 25px 0 10px 0;
+                font-weight: 600;
+              "
+            >
+              TAX INVOICE
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table
+      class="second-table"
+      style="
+        width: 100%;
+        font-family: Lexend;
+        border-collapse: collapse;
+        font-size: 12px;
+      "
+    >
+      <tr style="border: 1px solid red">
+        <td style="width: 49%" colspan="3">
+          <div style="display: flex; flex-direction: row; margin-top: -20px">
+            <div style="font-weight: 600">BUYER DETAILS:</div>
+            <div style="color: #636363; margin-left: 62px">##name##</div>
+          </div>
+          <div style="display: flex; flex-direction: row">
+            <div style="color: #636363; margin-let: 5px; margin-top: 8px">
+              ##state##
+            </div>
+          </div>
+        </td>
+        <td style="width: 50%" colspan="4">
+          <div style="display: flex; flex-direction: row">
+            <div style="font-weight: 600">Invoice no.:</div>
+            <div style="color: #636363; margin-left: 26px">
+              ##invoiceNumber##
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: row; margin-top: 8px">
+            <div style="font-weight: 600">Invoice date:</div>
+            <div style="color: #636363; margin-left: 17px">##invoiceDate##</div>
+          </div>
+          <div style="display: flex; flex-direction: row; margin-top: 8px">
+            <div style="font-weight: 600">Place of supply:</div>
+            <div style="color: #636363; margin-left: 5px">
+              ##placeOfSupply##
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr style="border: 1px solid black">
+        <th>No.</th>
+        <th>Description</th>
+        <th>HSN Code</th>
+        <th>##unitType##s</th>
+        <th>Rate</th>
+        <th>Per</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>
+          ##metalType## - (##purity## - ##karat##) - ##transactionId## <br />
+        </td>
+        <td style="color: #566161; text-align: end">##hsnCode##</td>
+        <td style="color: #566161; text-align: end">##quantity##</td>
+        <td style="color: #566161; text-align: end">##rate##</td>
+        <td style="color: #566161; text-align: end">1 ##unitType##</td>
+        <td style="color: #566161; text-align: end">##grossAmount##</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>TAXABLE VALUE</td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">##quantity##</td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">##totalTaxAmount##</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>CGST + SGST</td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">
+          ##CGSTPerc##% <br />
+          +##SGSTPerc##%
+        </td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">
+          ##CGSTAmount## <br />
+          +##SGSTAmount##
+        </td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>IGST</td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">##IGSTPerc##</td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">##IGSTAmount##</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>GROSS INVOICE AMOUNT</td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">##grossInvoice##</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>DISCOUNT</td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">##discount##</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>TOTAL NET PAYABLE</td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end"></td>
+        <td style="color: #566161; text-align: end">##netAmount##</td>
+      </tr>
+
+      <tr>
+        <td colspan="7" style="font-weight: 600">
+          <div>##netAmountWords##</div>
+        </td>
+      </tr>
+      <table style="width: 100%; font-family: Lexend">
+        <tr>
+          <td
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              padding: 0;
+              width: 100%;
+              display: block;
+              margin: 10px 0;
+            "
+            colspan="1"
+          >
+            <div>
+              E. & O.E. Delivery: Ex-office/Showroom/As per Customers request
+            </div>
+          </td>
+        </tr>
+
+        <table
+          style="
+            background: transparent;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            font-family: Lexend;
+            font-size: 12px;
+            margin-bottom: 10px;
+          "
+        >
+          <tbody
+            style="
+              padding: 10px;
+              border: 1px solid #c0c0c0;
+
+              border-radius: 10px !important;
+              display: block;
+            "
+          >
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  padding: 0;
+                  width: 100%;
+                  display: block;
+                  padding: 10px 0 0 10px;
+                "
+              >
+                *Disclaimer
+              </td>
+            </tr>
+            <tr>
+              <td
+                colspan="1"
+                style="
+                  font-size: 12px;
+                  padding: 0;
+                  width: 100%;
+                  display: block;
+                  padding: 10px 0 0 10px;
+                  opacity: 0.6;
+                "
+              >
+                The gold grams you own are calculated by dividing the amount
+                paid net of GST by the gold rate and rounded down to 4 decimal
+                places <br />
+                For example: - 0.00054 grams will be rounded down to 0.0005
+                grams
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  padding: 0;
+                  width: 100%;
+                  display: block;
+                  padding: 10px 0 0 10px;
+                "
+              >
+                Terms & Conditions:
+              </td>
+            </tr>
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  font-size: 12px;
+                  padding: 0;
+                  width: 100%;
+                  display: block;
+                  padding: 10px 0 0 10px;
+                  opacity: 0.6;
+                "
+              >
+                1. Goods once sold will not be returned
+              </td>
+            </tr>
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  font-size: 12px;
+                  padding: 0;
+                  width: 100%;
+                  display: block;
+                  padding: 10px 0 0 10px;
+                  opacity: 0.6;
+                "
+              >
+                2. Any disputes shall be subject to Ahmedabad jurisdiction
+              </td>
+            </tr>
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  font-size: 12px;
+                  padding: 0;
+                  width: 100%;
+                  display: block;
+                  padding: 10px 0 0 10px;
+                  opacity: 0.6;
+                "
+              >
+                3. Our responsibility ceases once the goods are delivered to the
+                customer
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  font-size: 12px;
+                  padding: 0;
+                  width: 100%;
+                  padding: 10px 0 0 10px;
+                  opacity: 0.6;
+                "
+              >
+                4. We hereby certify that our registration certificate under the
+                Central Goods and Services Act, 2017 is in force on the date on
+                which the sales
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  font-size: 12px;
+                  padding: 0;
+                  width: 100%;
+                  padding: 10px 0 0 23px;
+                  opacity: 0.6;
+                "
+              >
+                of goods specified in this tax invoice is made by us and that
+                the transaction of sale covered by this tax invoice has been
+                affected by us and it shall
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  font-size: 12px;
+                  padding: 0;
+                  width: 100%;
+                  padding: 10px 0 10px 23px;
+                  opacity: 0.6;
+                "
+              >
+                be accounted while filing of return and the due tax, if any,
+                payable on the sale has been paid or shall be paid for in the
+                turnover of sales
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </table>
+
+      <tr>
+        <td
+          style="
+            font-size: 12px;
+            font-weight: 600;
+            padding: 0;
+            width: 100%;
+            display: block;
+            margin: 10px 0;
+            font-family: lexend;
+            color: #223b51;
+          "
+          colspan="1"
+        >
+          <div
+            style="
+              padding-bottom: 30px;
+              font-family: lexend;
+              font-size: 12px;
+              font-weight: 600;
+            "
+          >
+            *This is system generated invoice and does not require a stamp or
+            signature.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

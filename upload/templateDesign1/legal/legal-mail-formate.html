@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .outer-container {
+        /* border: 1px solid grey; */
+        min-height: 30rem;
+        width: 100%;
+        padding: 10px;
+        font-family: sans-serif;
+      }
+      .sub-content {
+        color: red;
+        text-decoration: underline;
+      }
+      p {
+        font-size: 15px;
+      }
+      .inner-body-paragraph {
+        margin-left: 1.5rem;
+      }
+      .footer-content-last{
+        margin-top: 3rem !important;
+        margin-bottom: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer-container">
+      <div class="inner-body">
+        <p class="main-body-content">
+          Dear ##USERNAME##,
+        </p>
+        <br>
+        <p class="main-body-content">
+          You have approached ##NBFC##, an RBI registered NBFC (through ##APPNAME## application platform) for personal loan via online platform.
+        </p>
+        <p class="main-body-content">
+          Your Personal loan was approved & disbursed on executing online agreement for Rs. ##NETAPPROVEDAMOUNT## 
+          and the amount of Rs. ##DISBURSED## was deposited into your bank account post deduction of processing 
+          & other fees using RAZORPAYX bank transaction id- UTR Number ##UTR##, in your below-mentioned bank account details:
+        </p>
+        <p>Bank: ##BANK##</p>
+        <p>Account Number: ##DISBUREMENT_ACCOUNT##</p>
+        <p class="main-body-content">
+          As per the agreed terms you were to repay the said loan in Full PAY dated ##FULLPAYDATE##, 
+          however, your said ECS was dishonored by your banker due to “##FAILREASON##”.
+        </p>
+        <p class="main-body-content">
+          We have made all the attempts to recover our money from you including soft calls, which were fruitless due to your nonresponses.
+        </p>
+        <p class="main-body-content">
+          Therefore, please note that below actions will be initiated for recover of our legal and legitimate dues :
+        </p>
+        <div class="inner-body-paragraph">
+          <p>
+            1. Your delinquency details will be reported to all the Credit Bureaus in India. Which will impact your 
+            future scope of taking loans from all the Financial Institutions in India and this will remain on your 
+            Credit profile for the period of 7 years.
+          </p>
+          <p>
+            2. We are initiating legal actions under section 25(C) of The Payment and Settlement Systems Act, 2007. 
+            Advocate legal notice is attached herewith this email.
+          </p>
+        </div>
+        <p class="main-body-content">
+          Therefore, you are called upon to make the payment of Rs. ##FULLPAY## which includes interest, penalty charges as soon as possible. 
+          Failing which we shall be constrained to initiate criminal proceedings against you.
+        </p>
+        <div class="footer-content-last">
+          <b>
+            Also please note, we have helped you when you were in need, all what we are asking & requesting you is to repay our legal and legitimate dues.
+          </b>
+        </div>
+        <div class="footer-content">
+         <p>If you have any questions or queries please reach out to us on <a href = "mailto: ##APPLEGALMAIL##">##APPLEGALMAIL##</a></p>
+         <div class="last-content">
+            <p>Thanks & Regards,</p>
+            <p>##NBFCSHORTNAME## Compliance Team</p>
+         </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,931 @@
+<html>
+  <header>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Lexend&family=Lexend+Deca:wght@200&display=swap'
+      rel='stylesheet'
+    />
+    <style>
+      .body { font-family: "Lexend"; }
+    </style>
+  </header>
+
+  <body style='padding: 0; margin: 0'>
+    <table
+      style='
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+        font-family: Lexend;
+      '
+    >
+      <tbody>
+        <tr>
+          <td>
+            <table
+              style='
+                max-width: 725px;
+                width: 100%;
+                margin: auto;
+                border-collapse: collapse;
+                font-family: Lexend;
+              '
+            >
+              <tbody>
+                <tr>
+                  <td style='height: 80px'>
+                    <div style='margin-top: 18px; margin-bottom: 8px'>
+                      <img width='165px' height='40px' src={{nbfcLogo}} />
+                    </div>
+                    {{#cIf showLendingPartner}}
+                      <div style='font-size: 12px; margin-bottom: 18px'>
+                        Lending Partner :
+                        {{appName}}
+                      </div>
+                    {{/cIf}}
+                  </td>
+                  <td style='padding: 0 0px 0 0; width: 400px'>
+                    <div
+                      style='
+                        font-size: 12px;
+                        text-align: end;
+                        margin: 5px 0 0 0;
+                      '
+                    >
+                      {{nbfcAddress}}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td style='background-color: #11ba77; height: 1px;'></td>
+        </tr>
+
+        <tr>
+          <td style='padding: 0 30px'>
+            <div style='width: 80%; float: left'>
+              <div
+                style='
+                  text-align: center;
+                  font-weight: 700;
+                  font-size: 22px;
+                  margin-top: 18px;
+                  font-family: Lexend;
+                  letter-spacing: -0.2px;
+                  position: relative;
+                  left: 12%;
+                '
+              >
+                मुख्य तथ्य कथन
+              </div>
+              <div
+                style='
+                  font-weight: 600;
+                  margin-top: 30px;
+                  letter-spacing: 0.1px;
+                  font-size: 13px;
+                '
+              >
+                उधारकर्ताओं ने इस दस्तावेज़ की सामग्री को सत्यापित करने और समझने
+                के बाद, अनुसूची के अंत में अपने हस्ताक्षर किए हैं।
+              </div>
+            </div>
+            <div
+              style='
+                width: 20%;
+                float: right;
+                border-radius: 10px;
+                display: flex;
+                justify-content: end;
+              '
+            >
+              <div style='width: 100px; height: 110px; border-radius: 10px'>
+                <img
+                  style='{{selfieCSS}}'
+                  width='100%'
+                  height='100%'
+                  src='{{borrowerImg}}'
+                />
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style='padding: 10px 30px 30px 30px'>
+            <table
+              style='
+                background-color: #fff;
+                margin: auto;
+                width: 100%;
+                font-family: Lexend;
+                border-collapse: collapse;
+              '
+            >
+              <tbody>
+                <tr>
+                  <td
+                    colspan='4'
+                    align='center'
+                    style='
+                      font-weight: 600;
+                      padding: 8px 0;
+                      background-color: #d9d9d9;
+                      border: 1px solid #000;
+                      font-size: 14px;
+                    '
+                  >
+                    अनुसूची-सह-मुख्य तथ्य विवरण
+                  </td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #000; padding: 5px 10px'>
+                    <div style='font-size: 12px; font-weight: bold'>
+                      हस्ताक्षर करने की तिथि
+                    </div>
+                    <div style='font-size: 10px'>(DD/MM/YYYY)</div>
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 5px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{signingDate}}
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 5px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    उधारकर्ता का नाम
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 5px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{borrowerName}}
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    एनबीएफसी का नाम
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{nbfcName}}
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ऋण आईडी
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{loanId}}
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ग्राहक आईडी
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{customerId}}
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  ></td>
+                </tr>
+                <tr>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 0;
+                      background-color: #d9d9d9;
+                      font-weight: 600;
+                      font-size: 14px;
+                    '
+                    colspan='4'
+                    align='center'
+                  >
+                    ऋण विवरण
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    उधार की राशि
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{loanAmount}}/-
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ऋण अवधि
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{loanTenure}}
+                    दिन
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ब्याज दर
+                    <span style='font-size: 10px; font-weight: normal'>(प्रति
+                      दिन)</span>
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{interestRatePerDay}}%
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ईएमआई
+                    <span
+                      style='font-weight: normal; font-size: 10px'
+                    >(नबर)</span>
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{numberOfEmis}}
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ब्याज दर
+                    <span style='font-size: 10px; font-weight: normal'>(तय दर)</span>
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{interestRateFixed}}%
+                    <span style='font-size: 10px'>(प्रतिवर्ष)</span>
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ऋण प्रारंभ तिथि
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{loanStartDate}}
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ब्याज राशि
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{totalInterestAmount}}
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ऋण समाप्ति तिथि
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{emiEndDate}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    एपीआर (सभी शुल्क सहित)
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{aprCharges}}%
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    शांत अवधि**
+                  </td>
+                  <td
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{LOAN_AGREEMENT_COOLINGOFF_PERIOD}}
+                    दिन
+                  </td>
+                </tr>
+                {{#cIf isInsuranceCharge}}
+                  <tr>
+                    <td
+                      style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                    > बीमा प्रीमियम राशि</td>
+                    <td
+                      style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                    >{{insuranceCharge}}</td>
+                    <td
+                      style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                    >
+                      बीमा कंपनी
+                    </td>
+                    <td
+                      style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                    >
+                      {{insuranceBy}}
+                    </td>
+                  </tr>
+                {{/cIf}}
+                <tr>
+                  <td
+                    align='center'
+                    colspan='4'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 0;
+                      background-color: #d9d9d9;
+                      font-size: 12px;
+                    '
+                  >
+                    <span
+                      style='font-size: 14px; padding: 8px 0; font-weight: bold'
+                    >
+                      शुल्क</span>
+                    (सभी शुल्क वापसी योग्य नहीं हैं और ऋण के वितरण के बाद लागू
+                    होंगे)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    प्रसंस्करण शुल्क @{{processingPercentage}}%
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{processingAmount}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    दस्तावेज़ शुल्क @{{documentPercentage}}%
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{documentAmount}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ऑनलाइन सुविधा शुल्क
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{onlineConvenienceCharge}}
+                  </td>
+                </tr>
+                {{#cIf isStamp}}
+                  <tr>
+                    <td
+                      colspan='2'
+                      style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                    >
+                      स्टैप शुल्क एवं अन्य वैधानिक शुल्क
+                    </td>
+                    <td
+                      colspan='2'
+                      style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                    >
+                      {{stampCharges}}
+                    </td>
+                  </tr>
+                {{else}}
+                  <tr>
+                    <td
+                      colspan='2'
+                      style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                    >
+                      जोखिम मूल्यांकन शुल्क @{{riskAssessmentPr}}%
+                    </td>
+                    <td
+                      colspan='2'
+                      style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                    >
+                      {{riskAssessmentCharge}}
+                    </td>
+                  </tr>
+                {{/cIf}}
+
+                <!-- GST Charges & Doc Charges -->
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    9% एसजीएसटी समावेशी है जैसा कि भारत सरकार द्वारा निर्दिष्ट
+                    है
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{sgstCharges}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    9% सीजीएसटी समावेशी है जैसा कि भारत सरकार द्वारा निर्दिष्ट
+                    है
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{cgstCharges}}
+                  </td>
+                </tr>
+
+                <!-- Disbursement Amount -->
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    संवितरण राशि
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{disbursementAmount}}
+                  </td>
+                </tr>
+
+                <!-- Cheque / ECS / SI Return charges and Taxes -->
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    <span style='font-size: 12px'>
+                      चेक/ईसीएस/एसआई रिटर्न शुल्क:
+                    </span>
+                    <span style='font-size: 11px; font-weight: normal'>
+                      (बैंक के नागरिक और आपराधिक अधिकार और उपचार के लिए)
+                    </span>
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 8px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    ₹500 + जीएसटी जैसा लागू हो
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    कर: वास्तविक, वर्तमान में या भविष्य में लागू
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    शून्य
+                  </td>
+                </tr>
+
+                {{#cIf showDeferredInterest}}
+                  <tr>
+                    <td
+                      colspan='2'
+                      style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                    >
+                      आस्थगित ब्याज
+                    </td>
+                    <td
+                      colspan='2'
+                      style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                    >
+                      {{penaltyRatePerDay}}% प्रति दिन जो के बराबर है
+                      {{penaltyRatePerAnnum}}% वार्षिक
+                    </td>
+                  </tr>
+                {{/cIf}}
+
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    कानूनी संग्रहण एवं आकस्मिक शुल्क:
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    ₹{{legalCharge}}
+                    + जीएसटी यथा लागू
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    सुरक्षा/संपार्श्विक का विवरण:
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    अन-सुरक्षित
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    ऋण रद्दीकरण शुल्क:
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    शून्य
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                      font-weight: bold;
+                    '
+                  >
+                    फौजदारी शुल्क :
+                  </td>
+                  <td
+                    colspan='2'
+                    style='
+                      border: 1px solid #000;
+                      padding: 7px 10px;
+                      font-size: 12px;
+                    '
+                  >
+                    {{foreclosureCharge}}% बकाया मूल राशि + लागू जीएसटी
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      style='font-size: 10px; bottom: 5px; position: fixed; right: 0; padding: 10px 30px 10px 0px; text-align: right;'
+    >
+      <b>पृष्ठ 1</b>
+    </div>
+    <td>
+      <div
+        style='   width: 100%;
+            margin: auto;
+            position: relative;
+            bottom: 0;
+            position: fixed;background-color: #171732;'
+      >
+
+      </div>
+    </td>
+  </body>
+</html>

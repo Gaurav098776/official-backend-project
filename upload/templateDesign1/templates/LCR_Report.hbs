@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <style type="text/css">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Work Sans, sans-serif;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px 10px;
+        border-collapse: collapse;
+        font-size: 12px;
+      }
+
+      .border-table th,
+      .border-table td {
+        border: 1px solid #e6e6e6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="width: 768px; margin: auto">
+      <table>
+        <tr>
+          <td
+            style="
+              background-color: #ffffff;
+              text-align: center;
+              padding: 10px 0 15px;
+            "
+          >
+            <img
+              width="125px"
+              src="{{nbfcLogo}}"
+              class="CToWUd"
+              data-bit="iit"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: center; padding: 15px 0">
+            <h3 style="margin: 0; font-size: 16px">
+              LCR Summary : {{reportMonth}}
+            </h3>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="border-table text-nowrap">
+              <tbody>
+                <tr>
+                  {{#each lcrFields as |lcrfields|}}
+                  <td
+                    style="background-color: {{#cIf @index '%' 2}} #62393E {{else}} #2F1518 {{/cIf}};
+                  color: #fff; {{#cIf @first}}border-top-left-radius: 10px;{{/cIf}}
+                  {{#cIf @last}}border-top-right-radius: 10px;{{/cIf}}"
+                  >
+                    {{lcrfields}}
+                  </td>
+                  {{/each}}
+                </tr>
+                {{#each rows as |rows|}}
+                <tr>
+                  <td>{{rows.[Date]}}</td>
+                  <td>₹ {{numberWithComma rows.[Bank Balance]}}</td>
+                  <td>₹ {{numberWithComma rows.[Marketable Securities]}}</td>
+                  <td>₹ {{numberWithComma rows.[Total HQLA]}}</td>
+                  <td>₹ {{numberWithComma rows.[Expected Cash Inflow]}}</td>
+                  <td>₹ {{numberWithComma rows.[Stressed Cash Inflow]}}</td>
+                  <td>₹ {{numberWithComma rows.[Expected Cash Outflow]}}</td>
+                  <td>₹ {{numberWithComma rows.[Stressed Cash Outflow]}}</td>
+                  <td>₹ {{numberWithComma rows.[Total Net Cash Outflows]}}</td>
+                  <td>{{rows.[LCR Percentage]}}</td>
+                  <td>{{rows.[Updated By]}}</td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <tr>
+      <td>
+        <tr style="text-align: center">
+          <td
+            style="
+              background-color: #2f1518;
+              color: #ffffff;
+              padding: 10px 0 0 0;
+            "
+          >
+            Partnered NBFC :
+            <span style="font-weight: bold"> {{nbfcName}} </span>
+            / NBFC registration number :
+            <span style="font-weight: bold"> {{nbfcRegisterationNumber}} </span>
+          </td>
+        </tr>
+        <tr style="text-align: center">
+          <td
+            style="
+              background-color: #2f1518;
+              color: #ffffff;
+              padding: 5px 0 10px 0;
+            "
+          >
+            {{nbfcAddress}}
+          </td>
+        </tr>
+      </td>
+    </tr>
+  </body>
+</html>

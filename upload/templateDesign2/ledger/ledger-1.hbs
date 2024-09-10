@@ -1,0 +1,803 @@
+<html>
+  <header>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend&family=Lexend+Deca:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </header>
+  <style>
+    body {
+      font-family: "Lexend";
+    }
+
+    .statement-table th,
+    .statement-table td {
+      text-align: left;
+      padding: 10px 15px;
+      font-weight: normal;
+    }
+
+    .statement-table tr:nth-child(even) {
+      background-color: #f3fbf8;
+    }
+
+    .wrap-normal {
+      word-wrap: normal;
+    }
+
+    .wrap-nowrap-cell {
+      white-space: nowrap;
+    }
+  </style>
+
+  <body style="padding: 0; margin: 0">
+    <table
+      style="
+        max-width: 800px;
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+        font-family: Lexend;
+        font-size: 12px;
+        margin-bottom: 100px;
+      "
+    >
+      <tbody>
+        <tr>
+          <td>
+            <table
+              style="
+                max-width: 800px;
+                width: 100%;
+                margin: auto;
+                border-collapse: collapse;
+                font-family: Lexend;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="height: 80px; padding-left: 20px">
+                    <div style="margin-top: 18px; margin-bottom: 8px">
+                      <img width="165px" height="40px" src="{{nbfcLogo}}" />
+                    </div>
+                  </td>
+                  <td
+                    style="
+                      padding: 0 0px 0 0;
+                      width: 400px;
+                      padding-right: 20px;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #666666;
+                        font-size: 12px;
+                        text-align: end;
+                        margin: 5px 0 0 0;
+                      "
+                    >
+                      RBI NBFC Registered No. :
+                      <span style="font-weight: 600; color: #171732"
+                        >{{rbiRegisterationNo}}</span
+                      >
+                    </div>
+                    <div
+                      style="
+                        color: #666666;
+                        font-size: 12px;
+                        text-align: end;
+                        margin: 5px 0 0 0;
+                      "
+                    >
+                      CIN No. :
+                      <span style="font-weight: 600; color: #171732"
+                        >{{cinNo}}</span
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            style="
+              background-color: #11b177;
+              width: 100%;
+              justify-content: end;
+              height: 1px;
+              float: right;
+              margin-top: -2.5px;
+            "
+          ></td>
+        </tr>
+        <tr>
+          <td>
+            <table
+              style="
+                background: transparent;
+                border-collapse: collapse;
+                border-spacing: 0;
+                margin: auto;
+                width: 100%;
+                font-family: Lexend;
+                height: 100%;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <table
+                        style="
+                          padding: 20px;
+                          width: 100%;
+                          max-width: 800px;
+                          margin: auto;
+                        "
+                      >
+                        <tbody>
+                          <!-- sub header  -->
+                          <tr>
+                            <td>
+                              <span
+                                style="
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  letter-spacing: 0.3px;
+                                  text-transform: uppercase;
+                                  vertical-align: middle;
+                                "
+                                >Account statement</span
+                              >
+                              <span
+                                style="
+                                  background-color: #11b177;
+                                  border-radius: 6px;
+                                  padding: 5px;
+                                  color: #ffffff;
+                                  font-size: 12px;
+                                "
+                                >Loan ID: {{basicDetails.id}}</span
+                              >
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <!-- account table  -->
+
+                      <div style="padding: 0 20px">
+                        <table
+                          style="
+                            background-color: #ffffff;
+                            margin: auto;
+                            width: 100%;
+                            max-width: 800px;
+                            font-family: Lexend;
+                            border: 1px solid #a7a7a7;
+                            font-size: 20px;
+                          "
+                        >
+                          <tr>
+                            <!-- span 1 -->
+                            <td style="border-right: 1px solid #e2e2f0">
+                              <table
+                                style="
+                                  margin: auto;
+                                  border-collapse: collapse;
+                                  min-width: 100%;
+                                  max-width: 300px;
+                                  font-size: 12px;
+                                  background: #ffffff;
+                                "
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      A/C name
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.name}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Contact No.
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      +91 {{basicDetails.phone}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Email
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.email}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Product description
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.productDescription}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Sub product
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.subProduct}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 15px; color: #666666">
+                                      Address
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.address}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 15px; color: #666666">
+                                      City
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.city}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="margin: auto; width: 95%"
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+
+                            <!-- span 2 -->
+                            <td>
+                              <table
+                                style="
+                                  margin: auto;
+                                  border-collapse: collapse;
+                                  min-width: 100%;
+                                  max-width: 800px;
+                                  font-size: 12px;
+                                  background: #ffffff;
+                                "
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Interest rate
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.interestRate}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      A/C opening date
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.accountOpen}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      A/C close date
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.accountClose}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Loan amount to borrower
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      ₹{{basicDetails.loanAmount}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Disbursed amount
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      ₹{{basicDetails.disbursedAmount}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Loan charges
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      ₹{{basicDetails.loanCharges}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 15px; color: #666666">
+                                      Tenure
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.tenure}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="
+                                          margin: auto;
+                                          border-bottom: 1px solid #e2e2f0;
+                                          width: 95%;
+                                        "
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 15px; color: #666666">
+                                      Pincode
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{basicDetails.pinCode}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <div
+                                        style="margin: auto; width: 95%"
+                                      ></div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <!--  Waive of AMount -->
+                      <div style="padding: 0 20px">
+                        <table
+                          style="
+                            background-color: #ffffff;
+                            margin: auto;
+                            width: 100%;
+                            max-width: 800px;
+                            font-family: Lexend;
+                            border: 1px solid #a7a7a7;
+                            font-size: 16px;
+                            margin-top: 10px;
+                          "
+                        >
+                          <tr>
+                            <td>
+                              <table
+                                style="
+                                  margin: auto;
+                                  border-collapse: collapse;
+                                  min-width: 100%;
+                                  max-width: 300px;
+                                  font-size: 12px;
+                                  background: #ffffff;
+                                "
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      style="
+                                        padding: 10px;
+                                        color: #666666;
+                                        margin: 0 10px;
+                                      "
+                                    >
+                                      Waive of amount
+                                    </td>
+                                    <td
+                                      style="padding: 10px; text-align: right"
+                                    >
+                                      {{waiveAmount}}
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+
+                      <!--  Waive of Amount End -->
+
+                      <!-- statement header  -->
+                      <table
+                        style="
+                          background-color: #ffffff;
+                          margin: auto;
+                          width: 100%;
+                          max-width: 800px;
+                          font-family: Lexend;
+                        "
+                      >
+                        <tr>
+                          <td
+                            colspan="2"
+                            style="text-align: center; padding: 20px"
+                          >
+                            <div
+                              style="
+                                font-size: 14px;
+                                letter-spacing: 0.3px;
+                                color: #666666;
+                              "
+                            >
+                              Statement for the period of
+                              <span style="font-weight: 600; color: #171732">
+                                {{startDate}}</span
+                              >
+                              to
+                              <span style="font-weight: 600; color: #171732">
+                                {{endDate}}</span
+                              >
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- statement table  -->
+                      <table
+                        class="statement-table"
+                        style="
+                          margin: auto;
+                          width: 100%;
+                          max-width: 800px;
+                          font-family: Lexend;
+                          font-size: 12px;
+                          padding: 0 20px;
+                        "
+                        cellpadding="0"
+                        cellspacing="0"
+                      >
+                        <tr>
+                          {{#each ledgerFields as |ledgerFields|}}
+                          <th style="background-color: #171732; color: #fff">
+                            {{ledgerFields}}
+                          </th>
+                          {{/each}}
+                        </tr>
+                        {{#each disDetails as |disData index|}} {{#cIf @index
+                        '<' 10}}
+                        <tr>
+                          <td
+                            class="{{#cIf @last}} wrap-normal {{else}} wrap-nowrap-cell {{/cIf}}"
+                          >
+                            {{disData.[TXN DATE]}}
+                          </td>
+                          <td>{{disData.PARTICULARS}}</td>
+                          <td>{{disData.PLATFORM}}</td>
+                          <td>{{disData.UTR}}</td>
+                          <td>
+                            {{#cIf disData.DR 'eq' }} {{disData.DR}} {{else}}
+                            ₹{{disData.DR}} {{/cIf}}
+                          </td>
+                          <td>
+                            {{#cIf disData.CR 'eq'}} {{disData.CR}} {{else}}
+                            ₹{{disData.CR}} {{/cIf}}
+                          </td>
+                          <td>
+                            {{#cIf disData.BALANCE 'eq'}} {{disData.BALANCE}}
+                            {{else}} ₹{{disData.BALANCE}} {{/cIf}}
+                          </td>
+                        </tr>
+                        {{/cIf}} {{/each}}
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer
+      style="
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        font-family: Work Sans, sans-serif;
+      "
+    >
+      <table
+        style="
+          background: transparent;
+          border-collapse: collapse;
+          border-spacing: 0;
+          margin: auto;
+          max-width: 800px;
+          width: 100%;
+          font-family: Lexend;
+          height: 100%;
+          margin-top: 16px;
+        "
+      >
+        <tr>
+          <td>
+            <tr>
+              <td>
+                <div
+                  style="
+                    color: #171732;
+                    width: 100%;
+                    padding: 10px 0;
+                    background-color: #ffffff;
+                    text-align: center;
+                    font-size: 12px;
+                  "
+                >
+                  Contact No: {{helpContact}}
+                  <span style="padding: 0 5px">/</span> Email: {{infoEmail}}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div
+                  style="
+                    color: #ffffff;
+                    width: 100%;
+                    padding: 10px 0;
+                    background-color: #171732;
+                    text-align: center;
+                    font-size: 12px;
+                  "
+                >
+                  {{nbfcAddress}}
+                </div>
+              </td>
+            </tr>
+          </td>
+        </tr>
+      </table>
+    </footer>
+  </body>
+</html>

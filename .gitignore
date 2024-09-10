@@ -1,0 +1,67 @@
+# compiled output
+/dist
+/node_modules
+/secrets
+/upload/legalNotice/*.pdf
+/upload/*.txt
+/upload/cache/*.json
+/upload/*.jpg
+/upload/*.pdf
+/upload/*.json
+/upload/banking/*.pdf
+/upload/stamp/
+/.history
+/bankDetails.json
+/src/logs.js
+*.xlsx
+*.csv
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.env
+gcloud.json
+/credentials
+/certificates
+
+pincode.json
+
+*.pdf
+*.zip
+*.jpeg
+.vscode/settings.json
+*.jpg
+
+uat.key
+
+package-lock.json
+docker-compose.yml
+
+*.sh

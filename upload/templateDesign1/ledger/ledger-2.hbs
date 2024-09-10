@@ -1,0 +1,275 @@
+<html>
+  <header>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend&family=Lexend+Deca:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </header>
+  <style>
+    body {
+      font-family: "Lexend";
+    }
+    .statement-table th,
+    .statement-table td {
+      text-align: left;
+      padding: 10px 15px;
+      font-weight: normal;
+    }
+
+    .statement-table tr:nth-child(even) {
+      background-color: rgba(255, 245, 247, 0.5);
+    }
+    .wrap-normal{
+      word-wrap: normal;
+    }
+    .wrap-nowrap-cell{
+      white-space: nowrap;
+    }
+  </style>
+
+  <body style="padding: 0; margin: 0">
+    <table
+      style="
+        max-width: 800px;
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+        font-family: Lexend;
+        font-size: 12px;
+        margin-bottom: 100px;
+      "
+    >
+      <tbody>
+        <tr>
+          <td>
+            <table
+              style="
+                max-width: 800px;
+                width: 100%;
+                margin: auto;
+                border-collapse: collapse;
+                font-family: Lexend;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="height: 80px;padding-left:20px">
+                    <div style="margin-top: 18px; margin-bottom: 8px">
+                      <img
+                        width="165px"
+                        height="40px"
+                        src={{nbfcLogo}}
+                      />
+                    </div>
+                  </td>
+                  <td style="padding-right:20px; width: 400px">
+                    <div
+                      style="
+                        color: #666666;
+                        font-size: 12px;
+                        text-align: end;
+                        margin: 5px 0 0 0;
+                      "
+                    >
+                      RBI NBFC Registered No. :
+                      <span style="font-weight: 600; color: #000000"
+                        >{{rbiRegisterationNo}}</span
+                      >
+                    </div>
+                    <div
+                      style="
+                        color: #666666;
+                        font-size: 12px;
+                        text-align: end;
+                        margin: 5px 0 0 0;
+                      "
+                    >
+                      CIN No. :
+                      <span style="font-weight: 600; color: #000000"
+                        >{{cinNo}}</span
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: #d8d8d8"></td>
+        </tr>
+                <tr>
+          <td
+            style="
+              background-color: #e02d42;
+              width: 400px;
+              justify-content: end;
+              height: 1px;
+              float: right;
+              margin-top: -2.5px;
+            "
+          ></td>
+        </tr>
+        <tr>
+          <td>
+            <table
+              style="
+                background: transparent;
+                border-collapse: collapse;
+                border-spacing: 0;
+                margin: auto;
+                width: 100%;
+                font-family: Lexend;
+                height: 100%;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <!-- statement header  -->
+                      <table
+                        style="
+                          background-color: #ffffff;
+                          margin: auto;
+                          width: 100%;
+                          max-width: 800px;
+                          font-family: Lexend;
+                        "
+                      >
+                        <tr>
+                          <td
+                            colspan="2"
+                            style="text-align: center; padding: 20px"
+                          >
+                            <div
+                              style="
+                                font-size: 14px;
+                                letter-spacing: 0.3px;
+                                color: #666666;
+                              "
+                            >
+                              Statement for the period of
+                              <span style="font-weight: 600; color: #000000">
+                                {{startDate}}</span
+                              >
+                              to
+                              <span style="font-weight: 600; color: #000000">
+                                {{endDate}}</span
+                              >
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- statement table  -->
+                      <table
+                        class="statement-table"
+                        style="
+                          margin: auto;
+                          width: 100%;
+                          max-width: 800px;
+                          font-family: Lexend;
+                          font-size: 12px;
+                          padding:0 20px
+                        "
+                        cellpadding="0"
+                        cellspacing="0"
+                      >
+                        <tr>
+                            {{#each ledgerFields as |ledgerFields|}}
+                            <th style="background-color: #2f1518;color: #fff;">
+                                {{ledgerFields}}
+                            </th>
+                            {{/each}}
+                        </tr>
+                        {{#each disDetails as |disData index|}}
+                         {{#cIf @index '>' 9}}
+                            <tr>
+                            <td class="{{#cIf @last}} wrap-normal {{else}} wrap-nowrap-cell {{/cIf}}">{{disData.[TXN DATE]}}</td>
+                            <td>{{disData.PARTICULARS}}</td>
+                            <td>{{disData.PLATFORM}}</td>
+                            <td>{{disData.UTR}}</td>
+                            <td>
+                                {{#cIf disData.DR 'eq' }}                             
+                                {{disData.DR}}
+                                {{else}}
+                                ₹{{disData.DR}}
+                                {{/cIf}}
+                            </td>
+                            <td>
+                                {{#cIf disData.CR 'eq'}}
+                                {{disData.CR}}
+                                {{else}}
+                                ₹{{disData.CR}}
+                                {{/cIf}}
+                            </td>
+                            <td>
+                                {{#cIf disData.BALANCE 'eq'}}
+                                {{disData.BALANCE}}
+                                {{else}}
+                                ₹{{disData.BALANCE}}
+                                {{/cIf}}
+                            </td>
+                            </tr>
+                            {{/cIf}}
+                        {{/each}}
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer
+      style="
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        font-family: Work Sans, sans-serif;
+      "
+    >
+      <table
+        style="
+          background: transparent;
+          border-collapse: collapse;
+          border-spacing: 0;
+          margin: auto;
+          max-width: 800px;
+          width: 100%;
+          font-family: Lexend;
+          height: 100%;
+          margin-top: 16px;
+        "
+      >
+        <tr>
+          <td>
+             <tr>
+              
+              <td>
+                <div style="color:#2f1518;width: 100%;padding: 10px 0;background-color:#ffffff;text-align: center;font-size: 12px;">
+                  Contact No: {{helpContact}} <span style="padding: 0 5px;">/</span> Email: {{infoEmail}}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              
+              <td>
+                <div style="color:#ffffff;width: 100%;padding: 10px 0;background-color:#2f1518;text-align: center;font-size: 12px;">
+                  {{nbfcAddress}}
+                </div>
+              </td>
+            </tr>
+          </td>
+        </tr>
+      </table>
+    </footer>
+  </body>
+</html>

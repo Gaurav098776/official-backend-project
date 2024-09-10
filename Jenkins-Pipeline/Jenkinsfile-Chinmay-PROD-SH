@@ -1,0 +1,62 @@
+pipeline {
+    agent any
+    stages {
+        stage('commit-check') {
+            when {
+                branch 'C-PROD-YML'
+            }
+            steps {
+                script {
+                    // Extract the commit message
+                    def commitMessage = sh(
+                        script: 'git log -1 --pretty=%B',
+                        returnStdout: true
+                    ).trim()
+                    
+                    // Store the commit message in an environment variable for later use
+                    env.COMMIT_MESSAGE = commitMessage
+                }
+            }
+        }
+        stage('Deploy backend_deploy.sh') {
+            when {
+                branch 'C-PROD-YML'
+            }
+            steps {
+                sh 'bash /home/ubuntu/scripts/backend_deploy.sh'
+                echo 'Deploy success'
+            }
+        }
+    }
+    post {
+        success {
+            withCredentials([string(credentialsId: 'SLACK_TOKEN', variable: 'SLACK_TOKEN'), string(credentialsId: 'slackChannel', variable: 'SLACK_CHANNEL')]) {
+                sh """
+                    curl --location 'https://slack.com/api/chat.postMessage' \
+                         --header 'Authorization: Bearer ${SLACK_TOKEN}' \
+                         --header 'Content-Type: application/json; charset=utf-8' \
+                         --data '{
+                                "text": "C-PROD-YML(BACKEND-CHINFIN) Update -> New C-PROD-YML(BACKEND-CHINFIN) changes are deployed :rocket: \n*Commit Message:* ${env.COMMIT_MESSAGE} :modi:",
+                                "channel": "${SLACK_CHANNEL}"}'
+                """
+            }
+        }
+        failure {
+            script {
+                def failureMessage = "Build Failed of C-PROD-YML(BACKEND-CHINFIN) :x: -> Please check the Jenkins pipeline for details.\n*Commit Message:* ${env.COMMIT_MESSAGE} :modi:"
+
+                withCredentials([string(credentialsId: 'SLACK_TOKEN', variable: 'SLACK_TOKEN'), string(credentialsId: 'slackChannel', variable: 'SLACK_CHANNEL')]) {
+                    // Send failure notification to the channel
+                    sh """
+                        curl --location 'https://slack.com/api/chat.postMessage' \
+                             --header 'Authorization: Bearer ${SLACK_TOKEN}' \
+                             --header 'Content-Type: application/json; charset=utf-8' \
+                             --data '{
+                                    "text": "${failureMessage}",
+                                    "channel": "${SLACK_CHANNEL}"}'
+                    """
+                }
+            }
+        }
+    }
+}

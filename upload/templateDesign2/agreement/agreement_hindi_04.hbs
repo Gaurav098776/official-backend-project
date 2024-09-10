@@ -1,0 +1,276 @@
+<html>
+  <header>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Lexend&family=Lexend+Deca:wght@200&display=swap'
+      rel='stylesheet'
+    />
+    <style>
+      .body { font-family: "Lexend"; }
+    </style>
+  </header>
+
+  <body style='padding: 0; margin: 0'>
+    <table style='width: 100%; overflow-y: scroll; border-collapse: collapse'>
+      <tbody>
+        <tr>
+          <td>
+            <table
+              style='
+                max-width: 725px;
+                width: 100%;
+                margin: auto;
+                border-collapse: collapse;
+                font-family: Lexend;
+              '
+            >
+              <tbody>
+                <tr>
+                  <td style='height: 80px'>
+                    <div style='margin-top: 18px; margin-bottom: 8px'>
+                      <img width='165px' height='40px' src={{nbfcLogo}} />
+                    </div>
+                    {{#cIf showLendingPartner}}
+                      <div style='font-size: 12px; margin-bottom: 18px'>
+                        Lending Partner :
+                        {{appName}}
+                      </div>
+                    {{/cIf}}
+                  </td>
+                  <td style='padding: 0 0px 0 0; width: 400px'>
+                    {{#cIf isStamp}}
+                      <div
+                        style='color: #fff; font-size: 14px; text-align: end'
+                      >
+                        Certificate No :
+                        {{stampNumber}}
+                      </div>
+                    {{/cIf}}
+                    <div
+                      style='
+                        font-size: 12px;
+                        text-align: end;
+                        margin: 5px 0 0 0;
+                      '
+                    >
+                      {{nbfcAddress}}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style='background-color: #11ba77; height: 1px;'></td>
+        </tr>
+        <tr>
+          <td>
+            <div
+              style='
+                padding: 10px 30px 10px 30px;
+                text-align: right;
+                font-size: 10px;
+              '
+            >
+              <b>पृष्ठ 3 की निरंतरता में </b>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table
+              style='
+                border: 1px solid #fff;
+                border-collapse: collapse;
+                border-spacing: 0;
+                margin: auto;
+                width: 100%;
+                font-family: Lexend;
+                height: 100%;
+              '
+            >
+              <tbody>
+                <tr>
+                  <td style='padding: 10px 30px; font-size: 12px'>
+                    <div style='font-weight: 400; padding: 0 0 5px 40px'>
+                      <div style='float: left; width: 10px; margin-left: 20px'>
+                        5.
+                      </div>
+                      <div style='padding-inline-start: 40px'>
+                        <u>पृथक्करणीयता</u>: यदि इस अनुबंध का कोई भी प्रावधान अमान्य, अप्रवर्तनीय या कानून द्वारा निषिद्ध है, तो ऐसा प्रावधान इस
+                        समझौते से अलग हो जाएगा और इस समझौते का शेष भाग वैध, बाध्यकारी होगा।
+                        और ऐसे प्रभाव का जैसे कि ऐसा प्रावधान यहां शामिल नहीं था।
+                      </div>
+                    </div>
+                    <div style='font-weight: 400; padding: 0 0 5px 40px'>
+                      <div style='float: left; width: 10px; margin-left: 20px'>
+                        6.
+                      </div>
+                      <div style='padding-inline-start: 40px'>
+                        <u>समय</u>: पार्टियों द्वारा यहां उल्लिखित समयसीमा का पालन इस समझौते का सार होगा जब तक
+                        पार्टियों द्वारा लिखित रूप में विस्तारित।
+                      </div>
+                    </div>
+
+                    <div style='font-weight: 400; padding: 0 0 5px 40px'>
+                      <div style='float: left; width: 10px; margin-left: 20px'>
+                        7.
+                      </div>
+                      <div style='padding-inline-start: 40px'>
+                        <u>छूट</u>: इस अनुबंध के किसी भी प्रावधान के उल्लंघन की कोई भी छूट किसी भी छूट का गठन नहीं करेगी
+                        इसके किसी भी अन्य प्रावधान का पूर्व, समवर्ती या बाद में उल्लंघन, और कोई छूट नहीं होगी
+                        जब तक यह लिखित रूप में न किया गया हो और छूट देने वाली पार्टी के किसी अधिकृत प्रतिनिधि द्वारा हस्ताक्षरित न किया गया हो
+                        तब तक प्रभावी रहेगा।
+                      </div>
+                    </div>
+
+                    {{#cIf isStamp}}
+
+                      <div style='font-weight: 600; padding: 10px 0 0 0'>
+                        <div style='font-weight: 400; padding: 0 0 5px 40px'>
+                          <div
+                            style='float: left; width: 10px; margin-left: 20px'
+                          >
+                            8.
+                          </div>
+                          <div style='padding-inline-start: 40px'>
+                          <u>स्टैम्प शुल्क</u>: इस अनुबंध पर स्टैम्प शुल्क लागू कानूनों के अनुसार ऋणदाता द्वारा देय होगा।
+                          </div>
+                        </div>
+                      </div>
+                    {{/cIf}}
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style='
+                      font-weight: 600;
+                      font-size: 12px;
+                      padding: 10px 30px;
+                    '
+                  >
+                  इसकी गवाही में पार्टियों ने उपरोक्त तारीख और स्थान पर इस समझौते पर हस्ताक्षर और निष्पादन किया है
+                  उल्लिखित:
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    हस्ताक्षरित और वितरित
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    भीतर से
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 0px 30px; font-size: 12px'>
+                    नामित "ऋणदाता"
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <tr>
+                      <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                        <u>{{nbfcName}}</u>
+                      </td>
+                      <td></td>
+                    </tr>
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 10px 30px 5px 30px; font-size: 12px'>
+                    के हाथ से
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    MS.
+                    <u>{{nbfcName}}</u>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    <div
+                      style='
+                      border-bottom: 1.5px solid #000;
+                      width:max-content;'
+                    >
+                      <img
+                        width='140px'
+                        src='{{legalSignLink}}'
+                        alt=''
+                      />
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    (अधिकृत हस्ताक्षरकर्ता)
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    <u>पर {{agreementDate}}</u>
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    <u></u>
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 10px 30px 5px 30px; font-size: 12px'>
+                    हस्ताक्षरित और वितरित
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    भीतर के नाम से
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    उधार लेने वाला
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px 5px 30px; font-size: 12px'>
+                    <u>{{borrowerName}}</u>
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding: 0 30px; font-size: 12px'>
+                    <u>पर {{agreementDate}}</u>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      style='font-size: 10px; bottom: 5px; position: fixed; right: 0; padding: 10px 30px 10px 0px; text-align: right;'
+    >
+      <b>पृष्ठ 4</b>
+    </div>
+    <td>
+      <div
+        style='   width: 100%;
+            margin: auto;
+            position: relative;
+            bottom: 0;
+            position: fixed;background-color: #171732;'
+      >
+
+      </div>
+    </td>
+  </body>
+
+</html>

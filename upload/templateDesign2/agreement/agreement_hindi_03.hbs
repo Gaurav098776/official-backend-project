@@ -1,0 +1,383 @@
+<html>
+  <header>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend&family=Lexend+Deca:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .body {
+        font-family: "Lexend";
+      }
+    </style>
+  </header>
+
+  <body style="padding: 0; margin: 0">
+    <table style="width: 100%; overflow-y: scroll; border-collapse: collapse">
+      <tbody>
+        <tr>
+          <td>
+            <table
+              style="
+                max-width: 725px;
+                width: 100%;
+                margin: auto;
+                border-collapse: collapse;
+                font-family: Lexend;
+              ">
+            <tbody>
+              <tr>
+                <td style='height: 80px'>
+                  <div style='margin-top: 18px; margin-bottom: 8px'>
+                    <img width='165px' height='40px'
+                      src={{nbfcLogo}} />
+                  </div>
+                  {{#cIf showLendingPartner}}
+                  <div style='font-size: 12px; margin-bottom: 18px'>
+                    Lending Partner : {{appName}}
+                  </div>
+                  {{/cIf}}
+                </td>
+                <td style='padding: 0 0px 0 0; width: 400px'>
+                  {{#cIf isStamp}}
+                  <div style="color: #fff; font-size: 14px; text-align: end;">Certificate No :
+                    {{stampNumber}}
+                  </div>
+                  {{/cIf}}
+                  <div style='
+                        font-size: 12px;
+                        text-align: end;
+                        margin: 5px 0 0 0;
+                      '>
+                    {{nbfcAddress}}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style='background-color: #11ba77; height: 1px;'></td>
+      </tr>
+      <tr>
+          <td>
+            <div
+              style="
+                padding: 10px 30px 10px 30px;
+                text-align: right;
+                font-size: 10px;
+              "
+            >
+              <b>पृष्ठ 2 की निरंतरता में</b>
+            </div>
+          </td>
+        </tr>
+      <tr>
+        <td>
+          <table style="
+                border: 1px solid #fff;
+                border-collapse: collapse;
+                border-spacing: 0;
+                margin: auto;
+                width: 100%;
+                font-family: Lexend;
+                height: 100%;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="padding: 10px 30px; font-size: 12px">
+                    <div style="font-weight: 600; padding: 10px 0 0 0">
+                      <div
+                        style="
+                          float: left;
+                          width: 10px;
+                          margin-right: 10px;
+                          margin-left: 20px;
+                        "
+                      >
+                        <b>8.</b>
+                      </div>
+
+                      {{#cIf showLendingPartner}}
+                      <div style="padding-inline-start: 50px; font-weight: 400">
+                        <b>हानि से सुरक्षा:</b>
+                      </div>
+                      <div>
+                        <div style="font-weight: 400; padding: 0 0 5px 40px">
+                          <div
+                            style="float: left; width: 10px; margin-left: 20px"
+                          >
+                            1.
+                          </div>
+                          <div style="padding-inline-start: 40px">
+                          उधारकर्ता ऋणदाता को ऋण देने से होने वाले किसी भी और सभी नुकसान, क्षति या अन्य परिणामों के खिलाफ क्षतिपूर्ति करेगा और
+                          ऋणदाता को हानिरहित रखेगा और मांग करने पर ऋणदाता को ऐसी सभी रकम की प्रतिपूर्ति करेगा और अनुरोध पर उपस्थित होकर बचाव
+                          करेगा। उधारकर्ता की अपनी लागत और खर्चों पर, इसके संबंध में ऋणदाता के खिलाफ की जाने वाली कोई भी कार्रवाई।
+                          </div>
+                        </div>
+                        <div style="font-weight: 400; padding: 0 0 5px 40px">
+                          <div
+                            style="float: left; width: 10px; margin-left: 20px"
+                          >
+                            2.
+                          </div>
+                          <div style="padding-inline-start: 40px">
+                            उधारकर्ता और ऋणदाता स्वीकार करते हैं कि <u> Lenditt </u> केवल उधारकर्ता और ऋणदाता के बीच लेनदेन को सुविधाजनक बनाने के लिए
+                            एक सेवा प्रदाता है और उनके लिए किसी भी दायित्व को पूरा करने के लिए बाध्य नहीं है। उनकी कार्रवाई या निष्क्रियता के कारण
+                            कंपनी को होने वाली किसी भी हानि या क्षति के मामले में, ऋणदाता और उधारकर्ता कंपनी को क्षतिपूर्ति देंगे।
+                          </div>
+                        </div>
+                        {{else}}
+                        <div
+                          style="padding-inline-start: 50px; font-weight: 400"
+                        >
+                          <b>क्षतिपूर्ति: </b> उधारकर्ता ऋणदाता को किसी भी और सभी हानि, क्षति या अन्य परिणामों से क्षतिपूर्ति करेगा और हानिरहित
+                          रखेगा जो उधारकर्ता को ऋण देने से उत्पन्न हो सकते हैं और सभी की मांग पर ऋणदाता की प्रतिपूर्ति करेंगे। ऐसी रकम और अनुरोध
+                          पर उधारकर्ता की अपनी लागत और खर्चों पर उपस्थित होंगे और किसी भी कार्रवाई का बचाव करेंगे जो उसके संबंध में ऋणदाता के
+                          खिलाफ लाया जा सकता है।
+                        </div>
+                      </div>
+                      {{/cIf}}
+                    </div>
+                    <div style="font-weight: 600; padding: 5px 0 0 0">
+                      <div
+                        style="
+                          float: left;
+                          width: 10px;
+                          margin-right: 10px;
+                          margin-left: 20px;
+                        "
+                      >
+                        9.
+                      </div>
+                      <div style="padding-inline-start: 50px">
+                        नियम और शर्तें: दोनों पक्ष एक-दूसरे को स्वीकार करते हैं, प्रतिनिधित्व करते हैं, अनुबंध करते हैं और आश्वासन देते हैं कि:
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          1.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                          उन्होंने कंपनी की वेबसाइट/ऐप पर उपलब्ध सभी नियम और शर्तें, गोपनीयता नीति और अन्य सामग्री पढ़ ली है।
+                        </div>
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          2.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                          वे वेबसाइट/ऐप पर मौजूद नियमों और शर्तों, गोपनीयता नीति और अन्य बाध्यकारी सामग्री का पालन करने के लिए बिना शर्त सहमत हैं।
+                        </div>
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          3.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                        वेबसाइट/ऐप पर उधारकर्ता द्वारा प्रस्तुत की गई जानकारी और वित्तीय विवरण सत्य और सही हैं।
+                        </div>
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          4.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                          उधारकर्ता ने ऐसी कोई जानकारी प्रदान नहीं की है जो गलत हो या उसे पंजीकृत करने या वेबसाइट/ऐप के माध्यम से ऋण देने या उधार
+                          लेने की अनुमति देने के ऋणदाता के निर्णय को भौतिक रूप से बाधित करती हो।
+                        </div>
+                      </div>
+                    </div>
+                    <div style="font-weight: 600; padding: 5px 0 0 0">
+                      <div
+                        style="
+                          float: left;
+                          width: 10px;
+                          margin-right: 10px;
+                          margin-left: 20px;
+                        "
+                      >
+                        10.
+                      </div>
+                      <div style="padding-inline-start: 60px">
+                      नोटिस: <span style="font-weight: 400">इस समझौते के तहत भेजे जाने वाले किसी भी नोटिस को समझौते की शुरुआत में निर्धारित
+                        पते पर, या ऐसे अन्य पते पर प्राप्तकर्ता पक्ष को भेजा या वितरित किया जाएगा। पार्टियाँ समय-समय पर लिखित रूप में
+                        निर्दिष्ट कर सकती हैं। यदि नोटिस डिलीवर नहीं किया जा सकता है तो इसे कार्यस्थल, प्राथमिक और/या किराये सहित सभी दिए गए
+                        पतों पर भेजा जा सकता है। <br /> नोटिस इलेक्ट्रॉनिक मीडिया जैसे एसएमएस, ईमेल, व्हाट्सएप के माध्यम से सभी ईमेल आईडी और
+                        फोन नंबर पर भी भेजे जाएंगे। ऋण लेने वाले। </span>
+                      </div>
+                    </div>
+                    <div style="font-weight: 600; padding: 5px 0 0 0">
+                      <div
+                        style="
+                          float: left;
+                          width: 10px;
+                          margin-right: 20px;
+                          margin-left: 20px;
+                        "
+                      >
+                        11.
+                      </div>
+                      <div style="padding-inline-start: 60px">
+                      शासी कानून और क्षेत्राधिकार: <span style="font-weight: 400"> यह समझौता इसके द्वारा शासित और समझा जाएगा
+                        भारत के कानूनों के अनुसार। पक्ष इस बात पर स्पष्ट रूप से सहमत हैं कि इस समझौते से संबंधित किसी भी मामले, दावे या विवाद
+                        के संबंध में, केवल अहमदाबाद में स्थित अदालतों/प्राधिकरणों को विशेष अधिकार होंगे।
+                        क्षेत्राधिकार और पक्ष अहमदाबाद को छोड़कर किसी भी अन्य स्थान पर मुकदमा करने या मुकदमा दायर करने के अपने अधिकार को त्याग
+                        देते हैं।</span>
+
+                      </div>
+                    </div>
+                      <div style="font-weight: 600; padding: 5px 0 0 0">
+                      <div
+                        style="
+                          float: left;
+                          width: 10px;
+                          margin-right: 20px;
+                          margin-left: 20px;
+                        "
+                      >
+                        12.
+                      </div>
+                       <div style="padding-inline-start: 60px">
+                          कानूनी कार्यान्वयन:
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          1.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                          पार्टियां इस बात पर भी सहमत हैं कि इस समझौते या इसकी प्रदर्शन कंपनी के संबंध में उत्पन्न होने वाले किसी भी और सभी दावे,
+                          विवाद, मतभेद और प्रश्न कानूनी रूप से आगे बढ़ सकते हैं। कंपनी उचित कानूनी कार्यवाही दायर करने के लिए स्वतंत्र होगी,
+                          जिसमें अदालत और या कानून के उचित मंच के समक्ष सिविल और आपराधिक कार्यवाही शामिल है, लेकिन यह इन्हीं तक सीमित नहीं है और
+                          इसके लिए अधिकार क्षेत्र विशेष रूप से अहमदाबाद, गुजरात, भारत में होगा।
+                        </div>
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          2.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                        ऐसी स्थिति में जहां उधारकर्ता इस अनुबंध के भुगतान कार्यक्रम में निर्दिष्ट नियत तारीख पर या उससे पहले मासिक किस्त भुगतान
+                        (ईएमआई) में से कोई भी भुगतान करने में विफल रहता है, तो उधारकर्ता इस अनुबंध का उल्लंघन करने वाला होगा। इस तरह के डिफ़ॉल्ट
+                        पर, और इस समझौते के तहत या लागू कानून के तहत ऋणदाता को उपलब्ध किसी भी अन्य अधिकार और उपचार के अलावा, ऋणदाता को अतिदेय
+                        राशि की वसूली के लिए कानूनी शुल्क के रूप में 5000/- रुपये + जीएसटी जोड़ने का अधिकार होगा। उधारकर्ता द्वारा देय कुल बकाया
+                        राशि के लिए। इन कानूनी शुल्कों में वकील की फीस, अदालती लागत और अन्य संबंधित खर्च शामिल हैं, लेकिन ये इन्हीं तक सीमित
+                        नहीं हैं। अतिरिक्त कानूनी शुल्क तुरंत देय और देय हो जाएंगे, और इस समझौते की शर्तों के तहत उधारकर्ता द्वारा दिए गए कुल
+                        बकाया ऋण का हिस्सा माना जाएगा।
+                        </div>
+                      </div>
+                      
+                         
+                      
+                    </div>
+                    <div style="font-weight: 600; padding: 5px 0 0 0">
+                      <div
+                        style="
+                          float: left;
+                          width: 10px;
+                          margin-right: 20px;
+                          margin-left: 20px;
+                        "
+                      >
+                        13.
+                      </div>
+                      <div style="padding-inline-start: 60px">
+                        मिश्रित:
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          1.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                          <u>संशोधन</u>: इस समझौते को केवल दोनों पक्षों के अधिकृत प्रतिनिधियों द्वारा विधिवत हस्ताक्षरित लिखित रूप में संशोधित या
+                          संशोधित किया जा सकता है।
+                        </div>
+                      </div>
+
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          2.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                          <u>संपूर्ण समझौता</u>: यह समझौता पार्टियों के बीच इसके विषय से संबंधित संपूर्ण समझौते का गठन करता है और इसका स्थान लेता
+                          है
+                          ऐसी विषय वस्तु के संबंध में सभी पूर्व समझौते या समझ चाहे मौखिक हों या लिखित
+                          समझौते में परिवर्तन तब तक प्रभावी रहेगा जब तक कि उसे लिखित रूप में सीमित न कर दिया जाए और प्रत्येक पक्ष द्वारा या उसकी
+                          ओर से हस्ताक्षरित न कर दिया जाए। इस अनुबंध प्रपत्र का अनुलग्नक, यदि कोई हो
+                          इस समझौते का हिस्सा है और तदनुसार समझा जाएगा।
+                        </div>
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          3.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                        <u>कोई असाइनमेंट नहीं</u>: उधारकर्ता को इस अनुबंध के किसी भी दायित्व या देनदारी को किसी भी तरीके से किसी भी व्यक्ति को
+                        सौंपने का कोई अधिकार नहीं होगा।
+                        </div>
+                      </div>
+                      <div style="font-weight: 400; padding: 0 0 5px 40px">
+                        <div
+                          style="float: left; width: 10px; margin-left: 20px"
+                        >
+                          4.
+                        </div>
+                        <div style="padding-inline-start: 40px">
+                          <u>कोई साझेदारी नहीं</u>: पार्टियों के बीच का संबंध स्वतंत्र अनुबंध करने वाली पार्टियों का है।
+                          इस अनुबंध में शामिल कोई भी चीज़ साझेदारी, संयुक्त का गठन या गठन नहीं मानी जाएगी
+                          पार्टियों के बीच उद्यम, एजेंसी या रोजगार संबंध। यह स्पष्ट किया जाता है कि प्रत्येक द्वारा नियुक्त कर्मचारी
+                          पार्टी का केवल उस पार्टी के साथ संविदात्मक संबंध होगा और वे कर्मचारी नहीं हैं,
+                          दूसरे पक्ष के प्रतिनिधि या एजेंट।
+                        </div>
+                      </div>
+                       
+
+                       
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+     <div
+      style="font-size: 10px; bottom: 5px; position: fixed; right: 0; padding: 10px 30px 10px 0px; text-align: right;"
+    >
+      <b>पृष्ठ 3</b>
+    </div>
+    <td>
+      <div
+        style='   width: 100%;
+            margin: auto;
+            position: relative;
+            bottom: 0;
+            position: fixed;background-color: #171732;'
+      >
+
+      </div>
+    </td>
+  </body>
+</html>

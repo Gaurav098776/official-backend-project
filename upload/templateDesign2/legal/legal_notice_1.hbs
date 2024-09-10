@@ -1,0 +1,402 @@
+<html>
+  <header>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+  </header>
+  <body style='padding: 0 60px; margin: 0; background-position: center'>
+    <table
+      style='
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+        font-family: Work Sans, sans-serif;
+        font-size: 14px;
+      '
+    >
+      <tbody></tbody>
+      <tbody>
+        <tr>
+          <td colspan='2' style='text-align: end; padding: 40px 0 0 0'>
+            Mo.
+            {{adv_phone}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2' style='text-align: end; padding: 5px 0 0 0'>
+            Email:
+            {{adv_email}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2' style='text-align: end; padding: 5px 0 0 0'>
+            Enrollment No. :
+            {{adv_enr_no}}
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-size: 24px;
+              font-weight: 600;
+              text-align: center;
+              padding: 10px 0;
+            '
+          >
+            {{adv_name}}
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='text-align: end; padding: 0 0 10px 0;text-align: center;'
+          >
+            Advocate
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='padding: 0 0 10px 0; letter-spacing: 0.6px;text-align: center;'
+          >
+            {{adv_address}}.
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2'>
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              text-align: center;
+              font-weight: 600;
+              padding: 10px 0 10px 0;
+              letter-spacing: 0.6px;
+            '
+          >
+            <u>NOTICE</u>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='text-align: center; font-weight: 600; letter-spacing: 0.6px'
+          >
+            <u>Through Email</u>
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2' style='text-align: end; padding: 10px 0'>
+            Date:
+            {{autodebit_failedDate}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2' style='padding: 10px 0 0 0; letter-spacing: 0.6px'>
+            To,
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2' style='padding: 10px 0 0 0; letter-spacing: 0.6px'>
+            {{userName}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2' style='letter-spacing: 0.6px'>
+            {{aadhaarAddress}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2' style='letter-spacing: 0.6px'>PAN: {{panNumber}}</td>
+        </tr>
+        <tr>
+          <td colspan='2' style='letter-spacing: 0.6px'>Email:
+            {{userEmail}}</td>
+        </tr>
+        <tr>
+          <td colspan='2' style='letter-spacing: 0.6px'>
+            Mobile No: +91
+            {{userPhone}}
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              padding: 20px 0 0 0;
+              text-align: center;
+              letter-spacing: 0.6px;
+            '
+          >
+            <u>Subject: Statutory notice under section 25(c) of The Payment</u>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan='2'
+            style='
+              font-weight: 600;
+              padding: 10px 0 0 0;
+              text-align: center;
+              letter-spacing: 0.6px;
+            '
+          >
+            <u>and Settlement Systems Act, 2007</u>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td style='padding: 25px 0 0 0' colspan='2'>
+            <p
+              style='
+                line-height: 25px;
+                text-align: justify;
+                text-justify: inter-word;
+              '
+            >
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Under the instructions and on
+              behalf of my client,
+              {{nbfcName}}. which is a Non-Banking Financial Company (NBFC),
+              duly registered under Companies Act, 2013, having its registered
+              office at
+              {{nbfcAddress}}. (‘My Client’ for short), I serve you this notice
+              under section 25(c) of The Payment and Settlement Systems Act,
+              2007 (‘the Act’ for short), as under:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan='2'>
+            <ol
+              style='
+                line-height: 25px;
+                text-align: justify;
+                text-justify: inter-word;
+              '
+            >
+              <li style='padding-top: 15px'>
+                My client had lent & advanced a sum of Rs.
+                {{numberWithComma loanApprovedAmount}}/- ({{loanApprovedAmountWords}})
+                which was your approved loan amount towards your Personal loan
+                through mobile application named “{{appName}}”. A valid and
+                signed agreement was executed with you, and based on your loan
+                approval with Loan ID-
+                {{loanId}}
+                payment was deposited into your bank account using
+                {{dis_mode}}
+                bank transaction id- UTR Number
+                {{dis_bank_utr}}, below are the bank account details:
+              </li>
+              <div style='font-weight: 600; padding: 10px 0'>
+                Bank Name:{{bankName}}
+              </div>
+              <!-- <p style="page-break-before: always"></p> -->
+              <div style='font-weight: 600; padding: 0px 0 10px 0'>
+                Account Number :
+                {{accountNumber}}
+              </div>
+              <div style='font-weight: 600; padding: 0px 0 10px 0'>
+                Bank IFSC Code:{{ifcsCode}}
+              </div>
+              <p style='page-break-before: always'></p>
+              <li style='padding-top: 15px'>
+                Based on the loan agreement which was executed on
+                {{agreementDate}}
+                which was digitally signed by you consisted of all the terms &
+                conditions. The said amount was repayable within a period of
+                {{duration}}
+                days along with the interest as set out in the Key fact
+                statement, Loan Sanction letter & Agreement signed by you as
+                mentioned aforesaid. It was further agreed that in-case you
+                commit default in making the instalment you are bound & liable
+                to pay additional interest/penalty on the entire outstanding due
+                amount.
+              </li>
+              <li style='padding-top: 15px'>
+                The repayment schedule for the aforesaid loan amount was as
+                under;
+                {{#each emiData as |emi|}}
+                  <div
+                    style='padding-left: 20px;margin-top: 10px;'
+                  >{{emi.title}}.
+                    {{emi.emiNumber}}
+                    Installment dated
+                    {{emi.emi_date}}
+                    for an amount of Rs.
+                    {{numberWithComma emi.emiAmount}}/- ({{emi.emiAmountWords}})
+                  </div>
+                {{/each}}
+              </li>
+              <!-- ##instalment## ##payedAmount## ##reason## -->
+              <li style='padding-top: 5px'>
+                The said payments dated
+                {{failedEmiDate}}
+                respectively came to be dis-honored by your banker with a reason
+                of
+                <span style='font-weight: 600;'>
+                  “{{failedAutodebitText}}”.</span>
+              </li>
+              <!-- <p style="page-break-before: always"></p> -->
+              <!-- ##PageBreak1## -->
+              <li style='padding-top: 5px'>
+                The aforesaid installment dated
+                {{failedEmiDate}}
+                was wilfully defaulted by you and subsequently you had assured
+                my client to get it paid at earliest and relying upon the
+                assurances given by you; my client had granted you time to repay
+                both the outstanding Installments against the total outstanding
+                Rs.
+                {{numberWithComma autodebitAmount}}/- ({{autodebitAmountWords}}) till
+                {{autodebit_failedDate}}
+                but to the utter shock and surprise of my client the ECS mandate
+                was again rejected on
+                {{autodebit_failedDate}}
+                from your banker with a reason
+                <span
+                  style='font-weight: 600;'
+                >“{{failedAutodebitText}}”.</span>
+              </li>
+              <!-- ##PageBreak2## -->
+              <li style='padding-top: 5px'>
+                Since you have willfully defaulted paying the remaining amount
+                of the aforesaid EMIs and the said amount was not credited
+                through ECS in the account of my client from your account and as
+                it was agreed that in-case you commit default in making the
+                instalment you are bound & liable to pay additional
+                interest/penalty on the said EMIs amount which sums up to Rs.
+                {{numberWithComma totalOutStanding}}/- ({{totalOutStandingWords}})
+                as on
+                {{autodebit_failedDate}}
+                which is inclusive of the aforesaid installments.
+              </li>
+              <li style='padding-top: 5px'>
+                Therefore, you have committed an offence punishable under
+                section 25(c) of the of The Payment and Settlement Systems Act,
+                2007 and therefore upon instructions of my client, I hereby
+                serve you this legal notice before initiating prosecution
+                against you and further instruct you to make a payment of the
+                aforesaid amount to my client within 15 days from the receipt of
+                this notice, failing which my client shall be compelled to file
+                a criminal complaint against you before the competent Criminal
+                Court having jurisdiction to try cases under the said Act at
+                your cost, risk and consequences.
+              </li>
+              <p style='page-break-before: always'></p>
+              <li style='padding-top: 5px'>
+                It is further informed that my client upon succeeding in proving
+                its case, you may be punished with an imprisonment for a period
+                up to two years together with compensation up to twice the
+                cheque amount. That, the said actions of your part also fall
+                within the scope and ambit of various provisions of the
+                BHARATIYA NYAYA SANHITA (BNS), 2023 including section 316 (2),
+                318 (4) as from the totality of events it is evident that your
+                dishonest intention from the very inception was to deceive,
+                cheat and defraud my client.
+              </li>
+              <li style='padding-top: 5px'>As per the Loan Agreement duly signed
+                by both the parties, in the event of such a default, We are
+                entitled to recover the overdue amount along with Rs 5000/- +GST
+                as legal charges incurred in connection with such recovery.
+                These charges include, but are not limited to, attorney fees,
+                court costs, and other related expenses necessary to enforce the
+                terms of the Agreement.</li>
+              <li style='padding-top: 5px'>For any further clarification and
+                information please contact company’s authorized person on
+                {{legalNumber}}
+              </li>
+              <li style='padding-top: 5px'>If payment is already processed then
+                please provide us with the confirmation as soon as possible.</li>
+            </ol>
+            <br />
+            <br />
+            <table style='width:100%; margin-bottom: 40px;'>
+              <tr style='padding: 60px 0 0 0'>
+                <td style='padding: 20px 0 0 20px'>Place: Ahmedabad</td>
+                <td></td>
+                <td
+                  style='
+                    padding: 20px 0px 0 50px;
+                    text-align: center;
+                    width: 200px;
+                  '
+                >
+                  <div
+                    style='
+                      border-bottom: 1.5px solid #000;
+                      width: 70%;
+                      margin-left: 30px;
+                      margin-right: 30px;
+                    '
+                  >
+                    <img width='140' height='50' src='{{legal_sing}}' />
+                  </div>
+                  <div style='width: 240px; text-align: center'></div>
+                </td>
+              </tr>
+              <tr>
+                <td style='padding: 10px 0 0 20px'>Date:
+                  {{autodebit_failedDate}}</td>
+                <td></td>
+                <td
+                  style='
+                    padding: 10px 0 0 0;
+                    letter-spacing: 0.6px;
+                    width: 200px;
+                    text-align: center;
+                  '
+                >
+                  Authorized Signatory for
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td style='padding: 10px 100px 0 0'></td>
+                <td
+                  style='
+                    padding: 20px 0 0 0;
+                    font-weight: 600;
+                    text-align: center;
+                  '
+                >
+                  {{nbfcName}}
+                </td>
+              </tr>
+              <tr>
+                <td style='padding: 40px 0px 0px 0px; display: block'>
+                  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Through
+                  Me,
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style='
+                    border-bottom: 1px solid black;
+                    height: 100px;
+                    padding-left: 10px;
+                  '
+                >
+                  <img
+                    style='width: 150px; height: 100px; padding-left: 15px'
+                    src='{{adv_sign}}'
+                    alt=''
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style='padding: 10px 0 0 20px; width: 200px; font-weight: 500'
+                >
+                  &nbsp; &nbsp;&nbsp;
+                  {{adv_name}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

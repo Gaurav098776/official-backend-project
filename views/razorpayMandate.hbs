@@ -1,0 +1,12 @@
+<html>
+  <script src='https://checkout.razorpay.com/v1/checkout.js'></script>
+  <script>
+    var options = { "key": "{{key}}", "name": "{{name}}", "customer_id": "{{customer_id}}",
+    "callback_url": "{{callbackUrl}}", "order_id": "{{order_id}}", "recurring":
+    "1", "description": "{{nbfc_name}}", "image": "{{logo_img}}", config: {
+    display: { hide: [ { method: "upi" } ], sequence: ["block.utib",
+    "block.other"], preferences: { show_default_blocks: false } } }, redirect:
+    true, theme:{ close_button: false } }; var rzp1 = new Razorpay(options);
+    rzp1.open();
+  </script>
+</html>
